@@ -14,7 +14,9 @@ public class Proyecto_Final_Progra {
         Inventario ejecuta = new Inventario();
         ejecuta.llenarLibro();
         ejecuta.imprimeLibro();
-        
+        Clientes prueba = new Clientes();
+        prueba.llenarUsuario();
+        prueba.imprimeUsuario();
         
     }
     
