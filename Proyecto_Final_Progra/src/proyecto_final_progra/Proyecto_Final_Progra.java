@@ -8,7 +8,7 @@ package proyecto_final_progra;
  * 
  */
 public class Proyecto_Final_Progra {
-
+//Daniel se la come toda sin manos
     public static void main(String[] args) {
         
         Inventario ejecuta = new Inventario();
