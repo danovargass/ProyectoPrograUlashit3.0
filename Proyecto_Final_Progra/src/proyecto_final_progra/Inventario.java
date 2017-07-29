@@ -29,7 +29,17 @@ public class Inventario {
             System.out.println(libros[i]);
         }
         
+    
     }
     
-    
+    	public int buscarLibro(Libro libros[] ,int id){
+    		int count = 0;
+    		for(int i=0; i<libros.length;i++){
+    			System.out.println("Su contador es" + count);
+    			libros[i].equals(id);
+    			count = count+1;
+    		}
+    		return (count);
+    }
+        
 }

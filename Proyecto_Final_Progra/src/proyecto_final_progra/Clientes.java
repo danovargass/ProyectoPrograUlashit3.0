@@ -1,5 +1,7 @@
 package proyecto_final_progra;
 
+import javax.swing.JOptionPane;
+
 public class Clientes {
 
 	Usuario cliente [] = new Usuario [5];
@@ -24,7 +26,7 @@ public class Clientes {
     public void imprimeUsuario(){
         
         for(int i=0; i<cliente.length;i++){
-            System.out.println(cliente[i]);
+            JOptionPane.showMessageDialog(null, "La informacion del cliente es" + cliente[i]);
         }
 }
 }

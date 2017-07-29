@@ -1,6 +1,8 @@
 
 package proyecto_final_progra;
 
+import javax.swing.JOptionPane;
+
 /*
  *
  * @author danovargas
@@ -8,16 +10,17 @@ package proyecto_final_progra;
  * 
  */
 public class Proyecto_Final_Progra {
-//Daniel se la come toda sin manos
     public static void main(String[] args) {
         
         Inventario ejecuta = new Inventario();
-        ejecuta.llenarLibro();
+        /*ejecuta.llenarLibro();
         ejecuta.imprimeLibro();
         Clientes prueba = new Clientes();
         prueba.llenarUsuario();
-        prueba.imprimeUsuario();
-        
+        prueba.imprimeUsuario();*/
+        Cajero cajero1 = new Cajero();
+        //cajero1.login();
+        ejecuta.buscarLibro(ejecuta.libros, 1234);
     }
     
 }
