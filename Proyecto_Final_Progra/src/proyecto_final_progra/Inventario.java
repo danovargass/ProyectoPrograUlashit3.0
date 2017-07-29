@@ -39,9 +39,10 @@ public class Inventario {
     		for(int i=0; i<libros.length;i++){
     			System.out.println("Su contador es" + count);
     		 if ( libros[i].equals(id)){
-    			 JOptionPane.showMessageDialog(null, "Su libro es: " + libros);
+    			 System.out.println("Su nada es");
+    			 JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
     		 } else{
-    			 JOptionPane.showMessageDialog(null, "No se encontre el libro");
+    			 JOptionPane.showMessageDialog(null, "No se encontro el libro");
     		 }
     		
     		}
