@@ -18,9 +18,10 @@ public class Proyecto_Final_Progra {
         Clientes prueba = new Clientes();
         prueba.llenarUsuario();
         prueba.imprimeUsuario();*/
-        Cajero cajero1 = new Cajero();
+        //Cajero cajero1 = new Cajero();
         //cajero1.login();
-        ejecuta.buscarLibro(ejecuta.libros, 1234);
+        ejecuta.llenarLibro();
+        ejecuta.buscarLibro();
     }
     
 }
