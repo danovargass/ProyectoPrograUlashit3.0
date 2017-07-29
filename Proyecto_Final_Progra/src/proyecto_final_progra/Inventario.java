@@ -1,6 +1,8 @@
 
 package proyecto_final_progra;
 
+import javax.swing.JOptionPane;
+
 public class Inventario {
     
     //int i;
@@ -32,14 +34,17 @@ public class Inventario {
     
     }
     
-    	public int buscarLibro(Libro libros[] ,int id){
+    	public void buscarLibro(Libro libros[] ,int id){
     		int count = 0;
     		for(int i=0; i<libros.length;i++){
     			System.out.println("Su contador es" + count);
-    			libros[i].equals(id);
-    			count = count+1;
+    		 if ( libros[i].equals(id)){
+    			 JOptionPane.showMessageDialog(null, "Su libro es: " + libros);
+    		 } else{
+    			 JOptionPane.showMessageDialog(null, "No se encontre el libro");
+    		 }
+    		
     		}
-    		return (count);
     }
         
 }
