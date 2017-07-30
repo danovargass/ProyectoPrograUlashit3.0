@@ -9,7 +9,8 @@ public class Cajero {
     private int id;
     
     public void login(){ //Funcion de Log-in, tiene un for para poder repetir el ingreso en caso erroneo de contrasena
-    	for (int i=0; i==1 ;i++){
+    	for (int i=0; i==0 ;i++){
+            System.out.println("Ingreso");
     		nombre =JOptionPane.showInputDialog("Ingrese su nombre");
         	id = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su id"));
             if (id == 1155 && nombre.contains("Juan")){
