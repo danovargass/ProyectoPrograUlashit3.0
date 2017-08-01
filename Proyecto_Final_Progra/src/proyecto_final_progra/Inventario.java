@@ -28,7 +28,6 @@ public class Inventario {
         }
 
     }
-<<<<<<< HEAD
     
     	public void buscarLibro(Libro libros[] ,int id){
     		int count = 0;
@@ -41,7 +40,7 @@ public class Inventario {
                     }
     		
     		}
-=======
+        }
 
     public void buscarLibro() {
  
@@ -56,7 +55,6 @@ public class Inventario {
             }
 
         }
->>>>>>> a17193d61ed0bc025225785bd44f816675a01bb5
     }
 
 }
