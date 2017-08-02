@@ -42,12 +42,10 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="IDtxt" alignment="0" max="32767" attributes="0"/>
-                      <Component id="NombreTxt" alignment="0" max="32767" attributes="0"/>
-                      <Component id="PasswordTxt" alignment="1" pref="110" max="32767" attributes="0"/>
+                      <Component id="NombreTxt" alignment="0" pref="110" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="IDtxtField" alignment="1" max="32767" attributes="0"/>
                       <Component id="PasswordTxtField" alignment="1" pref="200" max="32767" attributes="0"/>
                       <Component id="NombreTxtField" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -70,17 +68,12 @@
                       <Component id="NombreTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="NombreTxtField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="IDtxt" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="IDtxtField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="PasswordTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="PasswordTxtField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   <Component id="VerifyBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="40" max="32767" attributes="0"/>
               </Group>
@@ -109,14 +102,6 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="4"/>
             <Property name="text" type="java.lang.String" value="ID:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="IDtxtField">
-        </Component>
-        <Component class="javax.swing.JLabel" name="PasswordTxt">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="4"/>
-            <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="VerifyBtn">

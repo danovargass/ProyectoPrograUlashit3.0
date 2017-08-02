@@ -34,8 +34,6 @@ public class LoginPage extends javax.swing.JFrame {
         NombreTxt = new javax.swing.JLabel();
         NombreTxtField = new javax.swing.JTextField();
         IDtxt = new javax.swing.JLabel();
-        IDtxtField = new javax.swing.JTextField();
-        PasswordTxt = new javax.swing.JLabel();
         VerifyBtn = new javax.swing.JToggleButton();
         PasswordTxtField = new javax.swing.JPasswordField();
 
@@ -50,9 +48,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         IDtxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         IDtxt.setText("ID:");
-
-        PasswordTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        PasswordTxt.setText("Contraseña:");
 
         VerifyBtn.setText("Verificar");
         VerifyBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,11 +64,9 @@ public class LoginPage extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(IDtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(NombreTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PasswordTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                    .addComponent(NombreTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(IDtxtField, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(PasswordTxtField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(NombreTxtField))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -91,15 +84,11 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NombreTxt)
                     .addComponent(NombreTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IDtxt)
-                    .addComponent(IDtxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PasswordTxt)
                     .addComponent(PasswordTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(65, 65, 65)
                 .addComponent(VerifyBtn)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
@@ -125,14 +114,18 @@ public class LoginPage extends javax.swing.JFrame {
         try {
             for (int i = 0; i == 0; i++) {
                 String nombre = NombreTxtField.getText();
-                int id = Integer.parseInt(IDtxtField.getText());
+                int id = Integer.parseInt(PasswordTxtField.getText());
 
                 if (id == 1155 && nombre.contains("Juan")) {
                     JOptionPane.showMessageDialog(null, "Su ingreso ha sido correcto");
+                    //this.dispose();
+                    MainMenu ejecuta = new MainMenu();
+                    ejecuta.setVisible(true);
                     this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Ingreso erroneo");
-                    i = i - 1;
+                    //i = i - 1;
+                    break;
                 }
             }
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -142,9 +135,16 @@ public class LoginPage extends javax.swing.JFrame {
         }
         //este metodo despliega el menu principal para el cajero q no tiene nada implementado ahorita
         //peo ya lo ejecuta
-        MainMenu ejecuta = new MainMenu();
-        ejecuta.setVisible(true);
-        this.dispose();
+        
+        //////
+        //quite el contador - 1 pq en realidad metiendo un break se resetea todo y asi no se encicla el proceso
+        //tambien meti el codigo dentro del if para q no entrara a la siguiente pagina si le daba ingreso erroneo
+        /////
+        
+        
+//        MainMenu ejecuta = new MainMenu();
+//        ejecuta.setVisible(true);
+//        this.dispose();
 
     }//GEN-LAST:event_VerifyBtnMouseClicked
 
@@ -186,10 +186,8 @@ public class LoginPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HeaderLoginPage;
     private javax.swing.JLabel IDtxt;
-    private javax.swing.JTextField IDtxtField;
     private javax.swing.JLabel NombreTxt;
     private javax.swing.JTextField NombreTxtField;
-    private javax.swing.JLabel PasswordTxt;
     private javax.swing.JPasswordField PasswordTxtField;
     private javax.swing.JToggleButton VerifyBtn;
     private javax.swing.JPanel jPanel1;
