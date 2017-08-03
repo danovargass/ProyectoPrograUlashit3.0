@@ -33,14 +33,16 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         InventarioBtn = new javax.swing.JToggleButton();
         AlquilerBtn = new javax.swing.JToggleButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        RetornoBtn = new javax.swing.JToggleButton();
+        ClientesBtn = new javax.swing.JToggleButton();
         FacturaBtn = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         InventarioDisplay = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         FacturaDisplay = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ClienteDisplay = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,15 +58,30 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         AlquilerBtn.setText("Alquilar");
+        AlquilerBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AlquilerBtnMouseClicked(evt);
+            }
+        });
         AlquilerBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AlquilerBtnActionPerformed(evt);
             }
         });
 
-        jToggleButton1.setText("Retorno");
+        RetornoBtn.setText("Retorno");
 
-        jToggleButton2.setText("Inventario Cliente");
+        ClientesBtn.setText("Clientes");
+        ClientesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClientesBtnMouseClicked(evt);
+            }
+        });
+        ClientesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClientesBtnActionPerformed(evt);
+            }
+        });
 
         FacturaBtn.setText("Factura");
         FacturaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -83,6 +100,10 @@ public class MainMenu extends javax.swing.JFrame {
         FacturaDisplay.setRows(5);
         jScrollPane2.setViewportView(FacturaDisplay);
 
+        ClienteDisplay.setColumns(20);
+        ClienteDisplay.setRows(5);
+        jScrollPane3.setViewportView(ClienteDisplay);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -92,7 +113,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(57, 57, 57)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -103,12 +126,12 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AlquilerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RetornoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(FacturaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,15 +142,18 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(InventarioBtn)
                     .addComponent(AlquilerBtn)
-                    .addComponent(jToggleButton2)
-                    .addComponent(jToggleButton1)
+                    .addComponent(ClientesBtn)
+                    .addComponent(RetornoBtn)
                     .addComponent(FacturaBtn)
                     .addComponent(jToggleButton4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,7 +164,9 @@ public class MainMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 273, Short.MAX_VALUE))
         );
 
         pack();
@@ -152,27 +180,23 @@ public class MainMenu extends javax.swing.JFrame {
         ///////
 
     }//GEN-LAST:event_AlquilerBtnActionPerformed
-
-    Libro libros[] = new Libro[5];
-    int i;
+    int alquiler, costoDiario, costoFinal;
+    Inventario biblioteca = new Inventario();
+    Clientes baseClientes = new Clientes();
+    int i, e;
     private void InventarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventarioBtnMouseClicked
         // TODO add your handling code here
         try {
+            biblioteca.llenarLibro();
 
-            libros[0] = new Libro(1234, 1997, "EjemploNombre1", "EjemploAutor1", "EjemploEditorial1");
-            libros[1] = new Libro(5678, 1998, "EjemploNombre2", "EjemploAutor2", "EjemploEditorial2");
-            libros[2] = new Libro(9012, 1999, "EjemploNombre3", "EjemploAutor3", "EjemploEditorial3");
-            libros[3] = new Libro(3456, 2000, "EjemploNombre4", "EjemploAutor4", "EjemploEditorial4");
-            libros[4] = new Libro(7890, 2001, "EjemploNombre5", "EjemploAutor5", "EjemploEditorial5");
-            
             int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
 
-            for (i = 0; i < libros.length; i++) {
-                if (libros[i].id == (busqueda)) {
+            for (i = 0; i < biblioteca.libros.length; i++) {
+                if (biblioteca.libros[i].id == (busqueda)) {
                     System.out.println("entro");
                     //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
-                    Libro despliega = libros[i];
-                    InventarioDisplay.setText("" + libros[i]);
+                    Libro despliega = biblioteca.libros[i];
+                    InventarioDisplay.setText("" + biblioteca.libros[i]);
                     break;
                 } else {
                     
@@ -188,9 +212,47 @@ public class MainMenu extends javax.swing.JFrame {
     private void FacturaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaBtnMouseClicked
         // TODO add your handling code here:
         
-        FacturaDisplay.setText(""+libros[i]);
+        FacturaDisplay.setText(""+biblioteca.libros[i] + "Su monto a pagar seria: " + costoFinal + "colones\n"  
+        + baseClientes.cliente[e]);
         
     }//GEN-LAST:event_FacturaBtnMouseClicked
+
+    private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
+        alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
+        costoDiario = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el costo diario del libro"));
+        costoFinal = alquiler * costoDiario;
+// TODO add your handling code here:
+    }//GEN-LAST:event_AlquilerBtnMouseClicked
+
+    private void ClientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ClientesBtnActionPerformed
+
+    private void ClientesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesBtnMouseClicked
+
+         try {
+            baseClientes.llenarUsuario();
+
+            int busquedaCliente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente"));
+
+            for (e = 0; e < baseClientes.cliente.length; e++) {
+                if (baseClientes.cliente[e].cedula == (busquedaCliente)) {
+                    System.out.println("entro");
+                    //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
+                   
+                    ClienteDisplay.setText("" + baseClientes.cliente[e]);
+                    break;
+                } else {
+                    
+                }
+
+            } System.out.println("no se encontro");
+        } catch (NullPointerException e) {
+            System.out.println("Se cae no se por que....");
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ClientesBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -229,16 +291,18 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton AlquilerBtn;
+    private javax.swing.JTextArea ClienteDisplay;
+    private javax.swing.JToggleButton ClientesBtn;
     private javax.swing.JToggleButton FacturaBtn;
     private javax.swing.JTextArea FacturaDisplay;
     private javax.swing.JToggleButton InventarioBtn;
     private javax.swing.JTextArea InventarioDisplay;
+    private javax.swing.JToggleButton RetornoBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JToggleButton jToggleButton4;
     // End of variables declaration//GEN-END:variables
 }

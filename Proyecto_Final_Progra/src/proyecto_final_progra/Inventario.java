@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Inventario {
 
     //int i;
-    Libro libros[] = new Libro[5];
+    static Libro libros[] = new Libro[5];
 
     public void llenarLibro() {
 

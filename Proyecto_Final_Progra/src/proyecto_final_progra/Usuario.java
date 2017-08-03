@@ -5,8 +5,8 @@ package proyecto_final_progra;
 //ser necesario.
 
 public class Usuario {
-	private int cedula, numeroTelefono;
-	private String nombre, apellido;
+	 int cedula, numeroTelefono;
+	 String nombre, apellido;
 	
 	public Usuario(int cedula, int numeroTelefono, String nombre, String apellido) {
         this.cedula = cedula;
