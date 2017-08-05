@@ -198,41 +198,45 @@ public class MainMenu extends javax.swing.JFrame {
 
             for (i = 0; i < biblioteca.libros.length; i++) {
                 if (biblioteca.libros[i].id == (busqueda)) {
-                    System.out.println("entro");
-                    //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
                     Libro despliega = biblioteca.libros[i];
                     InventarioDisplay.setText("" + biblioteca.libros[i]);
+                    
                     break;
                 } else {
-                    
                 }
-
-            } System.out.println("no se encontro");
+            }
+            if (i == 5) {
+                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+            }
         } catch (NullPointerException e) {
-        } catch (java.lang.NumberFormatException e){
-            
+        } catch (java.lang.NumberFormatException e) {
+
         }
 
     }//GEN-LAST:event_InventarioBtnMouseClicked
 
     private void FacturaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaBtnMouseClicked
         // TODO add your handling code here:
-        try{
-            FacturaDisplay.setText(""+biblioteca.libros[i] + "Su monto a pagar seria: " + (biblioteca.libros[i].precio * alquiler) + "colones\n"  
-        + baseClientes.cliente[e]);
-        } catch (java.lang.NullPointerException e){
+        try {
+            System.out.println("i = " + i + "e = " + e );
+            if ( alquiler != 0){
+                FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + (biblioteca.libros[i].precio * alquiler) + "colones\n"
+                    + baseClientes.cliente[e]);
+            }
             
+        } catch (java.lang.NullPointerException e) {
+
         }
-        
+
     }//GEN-LAST:event_FacturaBtnMouseClicked
 
     private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
-       try{
-           alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
-       } catch (java.lang.NumberFormatException e){
-           
-       }
-       
+        try {
+            alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
+        } catch (java.lang.NumberFormatException e) {
+
+        }
+
 // TODO add your handling code here:
     }//GEN-LAST:event_AlquilerBtnMouseClicked
 
@@ -242,27 +246,26 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void ClientesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesBtnMouseClicked
 
-         try {
+        try {
             baseClientes.llenarUsuario();
 
             int busquedaCliente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente"));
 
             for (e = 0; e < baseClientes.cliente.length; e++) {
                 if (baseClientes.cliente[e].cedula == (busquedaCliente)) {
-                    System.out.println("entro");
                     //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
-                   
+
                     ClienteDisplay.setText("" + baseClientes.cliente[e]);
                     break;
                 } else {
-                    
                 }
-
-            } System.out.println("no se encontro");
+            }
+            if (e == 5) {
+                JOptionPane.showMessageDialog(null, "No se encontro el cliente");
+            }
         } catch (NullPointerException e) {
-            System.out.println("Se cae no se por que....");
-        } catch (java.lang.NumberFormatException e){
-            
+        } catch (java.lang.NumberFormatException e) {
+
         }
 
         // TODO add your handling code here:
