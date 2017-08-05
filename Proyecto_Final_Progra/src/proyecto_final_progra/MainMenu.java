@@ -36,7 +36,7 @@ public class MainMenu extends javax.swing.JFrame {
         RetornoBtn = new javax.swing.JToggleButton();
         ClientesBtn = new javax.swing.JToggleButton();
         FacturaBtn = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        AgregaInvBtn = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         InventarioDisplay = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -54,6 +54,11 @@ public class MainMenu extends javax.swing.JFrame {
         InventarioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 InventarioBtnMouseClicked(evt);
+            }
+        });
+        InventarioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InventarioBtnActionPerformed(evt);
             }
         });
 
@@ -90,7 +95,12 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton4.setText("Agregar a Inventario");
+        AgregaInvBtn.setText("Agregar a Inventario");
+        AgregaInvBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregaInvBtnActionPerformed(evt);
+            }
+        });
 
         InventarioDisplay.setColumns(20);
         InventarioDisplay.setRows(5);
@@ -122,7 +132,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(InventarioBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton4)
+                        .addComponent(AgregaInvBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(AlquilerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -145,7 +155,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(ClientesBtn)
                     .addComponent(RetornoBtn)
                     .addComponent(FacturaBtn)
-                    .addComponent(jToggleButton4))
+                    .addComponent(AgregaInvBtn))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -186,35 +196,41 @@ public class MainMenu extends javax.swing.JFrame {
     int i, e;
     private void InventarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventarioBtnMouseClicked
         // TODO add your handling code here
-        try {
-            biblioteca.llenarLibro();
-
-            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
-
-            for (i = 0; i < biblioteca.libros.length; i++) {
-                if (biblioteca.libros[i].id == (busqueda)) {
-                    System.out.println("entro");
-                    //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
-                    Libro despliega = biblioteca.libros[i];
-                    InventarioDisplay.setText("" + biblioteca.libros[i]);
-                    break;
-                } else {
-                    
-                }
-
-            } System.out.println("no se encontro");
-        } catch (NullPointerException e) {
-            System.out.println("Se cae no se por que....");
-        }
+        
+        BuscarLibro ejecuta = new BuscarLibro();
+        ejecuta.setVisible(true);
+        
+        
+//        try {
+//            biblioteca.llenarLibro();
+//
+//            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
+//
+//            for (i = 0; i < biblioteca.libros.length; i++) {
+//                if (biblioteca.libros[i].id == (busqueda)) {
+//                    System.out.println("entro");
+//                    //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
+//                    Libro despliega = biblioteca.libros[i];
+//                    InventarioDisplay.setText("" + biblioteca.libros[i]);
+//                    break;
+//                } else {
+//
+//                }
+//
+//            }
+//            System.out.println("no se encontro");
+//        } catch (NullPointerException e) {
+//            System.out.println("Se cae no se por que....");
+//        }
 
     }//GEN-LAST:event_InventarioBtnMouseClicked
 
     private void FacturaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaBtnMouseClicked
         // TODO add your handling code here:
-        
-        FacturaDisplay.setText(""+biblioteca.libros[i] + "Su monto a pagar seria: " + costoFinal + "colones\n"  
-        + baseClientes.cliente[e]);
-        
+
+        FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + costoFinal + "colones\n"
+                + baseClientes.cliente[e]);
+
     }//GEN-LAST:event_FacturaBtnMouseClicked
 
     private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
@@ -230,7 +246,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void ClientesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesBtnMouseClicked
 
-         try {
+        try {
             baseClientes.llenarUsuario();
 
             int busquedaCliente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente"));
@@ -239,20 +255,32 @@ public class MainMenu extends javax.swing.JFrame {
                 if (baseClientes.cliente[e].cedula == (busquedaCliente)) {
                     System.out.println("entro");
                     //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
-                   
+
                     ClienteDisplay.setText("" + baseClientes.cliente[e]);
                     break;
                 } else {
-                    
+
                 }
 
-            } System.out.println("no se encontro");
+            }
+            System.out.println("no se encontro");
         } catch (NullPointerException e) {
             System.out.println("Se cae no se por que....");
         }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_ClientesBtnMouseClicked
+
+    private void AgregaInvBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregaInvBtnActionPerformed
+        // TODO add your handling code here:  
+        IngresoLibro ejecuta = new IngresoLibro();
+        ejecuta.setVisible(true);
+        
+    }//GEN-LAST:event_AgregaInvBtnActionPerformed
+
+    private void InventarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventarioBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InventarioBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,6 +318,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton AgregaInvBtn;
     private javax.swing.JToggleButton AlquilerBtn;
     private javax.swing.JTextArea ClienteDisplay;
     private javax.swing.JToggleButton ClientesBtn;
@@ -303,6 +332,5 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JToggleButton jToggleButton4;
     // End of variables declaration//GEN-END:variables
 }
