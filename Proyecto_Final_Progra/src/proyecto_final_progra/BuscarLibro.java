@@ -35,6 +35,7 @@ public class BuscarLibro extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         InventarioDisplayField = new javax.swing.JTextArea();
         BusquedaLibroBtn = new javax.swing.JToggleButton();
+        Cerrar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +61,13 @@ public class BuscarLibro extends javax.swing.JFrame {
             }
         });
 
+        Cerrar.setText("Cerrar");
+        Cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CerrarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -69,11 +77,17 @@ public class BuscarLibro extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BusquedaIDBtn)
-                    .addComponent(BusquedaLibroBtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BusquedaIDBtn)
+                            .addComponent(BusquedaLibroBtn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Cerrar)
+                        .addGap(58, 58, 58)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -85,13 +99,17 @@ public class BuscarLibro extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
-                        .addGap(63, 63, 63))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BusquedaIDBtn)
                         .addGap(37, 37, 37)
                         .addComponent(BusquedaLibroBtn)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(Cerrar))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE))
+                        .addGap(63, 63, 63))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -109,7 +127,7 @@ public class BuscarLibro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     int alquiler, costoDiario, costoFinal;
-    Inventario biblioteca = new Inventario();
+    static Inventario biblioteca = new Inventario();
     Clientes baseClientes = new Clientes();
     int i, e;
 
@@ -137,7 +155,6 @@ public class BuscarLibro extends javax.swing.JFrame {
         } catch (NullPointerException e) {
             System.out.println("Se cae no se por que....");
         }
-
 
     }//GEN-LAST:event_BusquedaIDBtnMouseClicked
 
@@ -168,6 +185,12 @@ public class BuscarLibro extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_BusquedaLibroBtnMouseClicked
+
+    private void CerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarMouseClicked
+        // TODO add your handling code here:
+        
+        this.dispose();
+    }//GEN-LAST:event_CerrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -207,6 +230,7 @@ public class BuscarLibro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BusquedaIDBtn;
     private javax.swing.JToggleButton BusquedaLibroBtn;
+    private javax.swing.JToggleButton Cerrar;
     private javax.swing.JTextArea InventarioDisplayField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
