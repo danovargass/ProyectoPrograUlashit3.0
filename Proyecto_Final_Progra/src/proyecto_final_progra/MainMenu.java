@@ -56,6 +56,11 @@ public class MainMenu extends javax.swing.JFrame {
                 InventarioBtnMouseClicked(evt);
             }
         });
+        InventarioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InventarioBtnActionPerformed(evt);
+            }
+        });
 
         AlquilerBtn.setText("Alquilar");
         AlquilerBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -180,7 +185,7 @@ public class MainMenu extends javax.swing.JFrame {
         ///////
 
     }//GEN-LAST:event_AlquilerBtnActionPerformed
-    int alquiler, costoDiario, costoFinal;
+    int alquiler, costoDiario;
     Inventario biblioteca = new Inventario();
     Clientes baseClientes = new Clientes();
     int i, e;
@@ -204,23 +209,30 @@ public class MainMenu extends javax.swing.JFrame {
 
             } System.out.println("no se encontro");
         } catch (NullPointerException e) {
-            System.out.println("Se cae no se por que....");
+        } catch (java.lang.NumberFormatException e){
+            
         }
 
     }//GEN-LAST:event_InventarioBtnMouseClicked
 
     private void FacturaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaBtnMouseClicked
         // TODO add your handling code here:
-        
-        FacturaDisplay.setText(""+biblioteca.libros[i] + "Su monto a pagar seria: " + costoFinal + "colones\n"  
+        try{
+            FacturaDisplay.setText(""+biblioteca.libros[i] + "Su monto a pagar seria: " + (biblioteca.libros[i].precio * alquiler) + "colones\n"  
         + baseClientes.cliente[e]);
+        } catch (java.lang.NullPointerException e){
+            
+        }
         
     }//GEN-LAST:event_FacturaBtnMouseClicked
 
     private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
-        alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
-        costoDiario = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el costo diario del libro"));
-        costoFinal = alquiler * costoDiario;
+       try{
+           alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
+       } catch (java.lang.NumberFormatException e){
+           
+       }
+       
 // TODO add your handling code here:
     }//GEN-LAST:event_AlquilerBtnMouseClicked
 
@@ -249,10 +261,16 @@ public class MainMenu extends javax.swing.JFrame {
             } System.out.println("no se encontro");
         } catch (NullPointerException e) {
             System.out.println("Se cae no se por que....");
+        } catch (java.lang.NumberFormatException e){
+            
         }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_ClientesBtnMouseClicked
+
+    private void InventarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventarioBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_InventarioBtnActionPerformed
 
     /**
      * @param args the command line arguments
