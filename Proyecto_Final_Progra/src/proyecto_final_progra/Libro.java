@@ -8,12 +8,13 @@ package proyecto_final_progra;
 
 public class Libro {
     
-    int id, publicacion;
+    int id, publicacion, precio;
     String nombre, autor, editorial;    
 
-    public Libro(int id, int publicacion, String nombre, String autor, String editorial) {
+    public Libro(int id, int publicacion, int precio, String nombre, String autor, String editorial) {
         this.id = id;
         this.publicacion = publicacion;
+        this.precio = precio;
         this.nombre = nombre;
         this.autor = autor;
         this.editorial = editorial;
@@ -59,6 +60,16 @@ public class Libro {
         this.editorial = editorial;
     }
 
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+    
+    
+
     @Override
     public String toString() {
         return "Detalle del libro:\n"
@@ -67,6 +78,7 @@ public class Libro {
                 + "-Nombre: " + nombre + "\n"
                 + "-Autor: " + autor + "\n"
                 + "-Editorial: " + editorial+"\n"
+                + "-Precio: " + precio+"\n"
                 + "";
     }
     
