@@ -190,13 +190,12 @@ public class MainMenu extends javax.swing.JFrame {
         ///////
 
     }//GEN-LAST:event_AlquilerBtnActionPerformed
-    int alquiler, costoDiario, costoFinal;
+    int alquiler, costoDiario;
     Inventario biblioteca = new Inventario();
     Clientes baseClientes = new Clientes();
     int i, e;
     private void InventarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventarioBtnMouseClicked
         // TODO add your handling code here
-        
 
         BuscarLibro ejecuta = new BuscarLibro();
         ejecuta.setVisible(true);
@@ -280,7 +279,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void ClientesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesBtnMouseClicked
 
-        try {
+        //try {
             baseClientes.llenarUsuario();
 
             int busquedaCliente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente"));
@@ -300,12 +299,12 @@ public class MainMenu extends javax.swing.JFrame {
 
             if (e == 5) {
                 JOptionPane.showMessageDialog(null, "No se encontro el cliente");
-            }catch (NullPointerException e) {
-                        
-                }catch (java.lang.NumberFormatException e) {
+            //}catch (NullPointerException e) {
+                    //}
+                //}catch (java.lang.NumberFormatException e) {
 
-                }
-
+                //}
+        }
             // TODO add your handling code here:
     }//GEN-LAST:event_ClientesBtnMouseClicked
 
