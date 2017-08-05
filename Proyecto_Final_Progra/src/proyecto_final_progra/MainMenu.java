@@ -197,10 +197,10 @@ public class MainMenu extends javax.swing.JFrame {
     private void InventarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventarioBtnMouseClicked
         // TODO add your handling code here
         
+
         BuscarLibro ejecuta = new BuscarLibro();
         ejecuta.setVisible(true);
-        
-        
+
 //        try {
 //            biblioteca.llenarLibro();
 //
@@ -222,6 +222,27 @@ public class MainMenu extends javax.swing.JFrame {
 //        } catch (NullPointerException e) {
 //            System.out.println("Se cae no se por que....");
 //        }
+        try {
+            biblioteca.llenarLibro();
+
+            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
+
+            for (i = 0; i < biblioteca.libros.length; i++) {
+                if (biblioteca.libros[i].id == (busqueda)) {
+                    Libro despliega = biblioteca.libros[i];
+                    InventarioDisplay.setText("" + biblioteca.libros[i]);
+
+                    break;
+                } else {
+                }
+            }
+            if (i == 5) {
+                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+            }
+        } catch (NullPointerException e) {
+        } catch (java.lang.NumberFormatException e) {
+
+        }
 
     }//GEN-LAST:event_InventarioBtnMouseClicked
 
@@ -230,13 +251,26 @@ public class MainMenu extends javax.swing.JFrame {
 
         FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + costoFinal + "colones\n"
                 + baseClientes.cliente[e]);
+        try {
+            System.out.println("i = " + i + "e = " + e);
+            if (alquiler != 0) {
+                FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + (biblioteca.libros[i].precio * alquiler) + "colones\n"
+                        + baseClientes.cliente[e]);
+            }
+
+        } catch (java.lang.NullPointerException e) {
+
+        }
 
     }//GEN-LAST:event_FacturaBtnMouseClicked
 
     private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
-        alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
-        costoDiario = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el costo diario del libro"));
-        costoFinal = alquiler * costoDiario;
+        try {
+            alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
+        } catch (java.lang.NumberFormatException e) {
+
+        }
+
 // TODO add your handling code here:
     }//GEN-LAST:event_AlquilerBtnMouseClicked
 
@@ -253,7 +287,6 @@ public class MainMenu extends javax.swing.JFrame {
 
             for (e = 0; e < baseClientes.cliente.length; e++) {
                 if (baseClientes.cliente[e].cedula == (busquedaCliente)) {
-                    System.out.println("entro");
                     //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
 
                     ClienteDisplay.setText("" + baseClientes.cliente[e]);
@@ -261,22 +294,28 @@ public class MainMenu extends javax.swing.JFrame {
                 } else {
 
                 }
+                System.out.println("no se encontro");
 
             }
-            System.out.println("no se encontro");
-        } catch (NullPointerException e) {
-            System.out.println("Se cae no se por que....");
-        }
 
-        // TODO add your handling code here:
+            if (e == 5) {
+                JOptionPane.showMessageDialog(null, "No se encontro el cliente");
+            }catch (NullPointerException e) {
+                        
+                }catch (java.lang.NumberFormatException e) {
+
+                }
+
+            // TODO add your handling code here:
     }//GEN-LAST:event_ClientesBtnMouseClicked
 
     private void AgregaInvBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregaInvBtnActionPerformed
         // TODO add your handling code here:  
         IngresoLibro ejecuta = new IngresoLibro();
         ejecuta.setVisible(true);
-        
+
     }//GEN-LAST:event_AgregaInvBtnActionPerformed
+
 
     private void InventarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventarioBtnActionPerformed
         // TODO add your handling code here:
