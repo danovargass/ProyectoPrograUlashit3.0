@@ -172,12 +172,10 @@ public class IngresoLibro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    static Libro ingresaLibros[] = new Libro[100];
+    static Libro ingresaLibros[] = new Libro[99];
     int cont = 0;
-   static int librosAgregados = -1;
     private void AgregarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarBtnMouseClicked
         // TODO add your handling code here:
-        librosAgregados = librosAgregados + 1;
         try {
             String libroName = LibroTxt.getText();
             String autorName = AutorTxt.getText();

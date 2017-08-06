@@ -182,15 +182,16 @@ public class IngresarCliente extends javax.swing.JFrame {
     private void AgregarClientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarClientBtnActionPerformed
         // TODO add your handling code here:
         
-        MainMenu ejecuta = new MainMenu();
-        ejecuta.setVisible(true);
-        this.dispose();
+        
         
         
     }//GEN-LAST:event_AgregarClientBtnActionPerformed
 
     private void CerrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarBtnActionPerformed
         // TODO add your handling code here:
+        MainMenu ejecuta = new MainMenu();
+        ejecuta.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_CerrarBtnActionPerformed
 
     /**

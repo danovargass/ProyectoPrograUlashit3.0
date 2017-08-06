@@ -216,7 +216,7 @@
         </Container>
         <Component class="javax.swing.JToggleButton" name="BuscarClienteBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Buscar cliente"/>
+            <Property name="text" type="java.lang.String" value="Agregar Cliente"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BuscarClienteBtnMouseClicked"/>

@@ -116,7 +116,7 @@ public class MainMenu extends javax.swing.JFrame {
         ClienteDisplay.setRows(5);
         jScrollPane3.setViewportView(ClienteDisplay);
 
-        BuscarClienteBtn.setText("Buscar cliente");
+        BuscarClienteBtn.setText("Agregar Cliente");
         BuscarClienteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BuscarClienteBtnMouseClicked(evt);
@@ -129,18 +129,17 @@ public class MainMenu extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addComponent(AgregaInvBtn)
                                 .addGap(18, 18, 18)
                                 .addComponent(BuscarClienteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(RetornoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addComponent(InventarioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,7 +147,6 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addComponent(AlquilerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(125, 125, 125))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,31 +234,11 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void ClientesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesBtnMouseClicked
 
-        //try {
-            baseClientes.llenarUsuario();
-
-            int busquedaCliente = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente"));
-
-            for (e = 0; e < baseClientes.cliente.length; e++) {
-                if (baseClientes.cliente[e].cedula == (busquedaCliente)) {
-                    //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
-
-                    ClienteDisplay.setText("" + baseClientes.cliente[e]);
-                    break;
-                } else {
-
-                }
-                System.out.println("no se encontro");
-
-            }
-
-            if (e == 5) {
-                JOptionPane.showMessageDialog(null, "No se encontro el cliente");
-                //}catch (NullPointerException e) {
-                //}
-            //}catch (java.lang.NumberFormatException e) {
-
-            //}
+        try {
+         BuscarCliente ejecuta1 = new BuscarCliente();
+        ejecuta1.setVisible(true);
+        }catch (java.lang.NumberFormatException e){
+            
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_ClientesBtnMouseClicked
