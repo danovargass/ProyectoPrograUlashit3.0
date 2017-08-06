@@ -242,8 +242,8 @@ public class BuscarLibro extends javax.swing.JFrame {
     }//GEN-LAST:event_CerrarMouseClicked
 
     private void BusquedaLibroBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaLibroBtn1MouseClicked
-        confirmacion = true;
-        try {
+
+//        try {
             biblioteca.llenarLibro();
 
             String busqueda = JOptionPane.showInputDialog("Ingrese el nombre del libro");
@@ -251,14 +251,17 @@ public class BuscarLibro extends javax.swing.JFrame {
             for (i = 0; i < biblioteca.libros.length; i++) {
                 if (biblioteca.libros[i] != null) {
                     if (biblioteca.libros[i].nombre.equals(busqueda)) {
-                        Libro despliega = biblioteca.libros[i];
                         InventarioDisplayField.setText("" + biblioteca.libros[i]);
-                        confirmacion = true;
+                        System.out.println("i" + i);
                         break;
                     } else {
-                        confirmacion = false;
+//                        {
+//                        JOptionPane.showMessageDialog(null, "No se encontro el libro segundo if");
+//                        break;
+//                    }
                     }
-                }
+                       
+                //}
 
 //            if (!confirmacion) {
 //                for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
@@ -273,15 +276,17 @@ public class BuscarLibro extends javax.swing.JFrame {
 //                        confirmacion = false;
 //                    }
 //                }
-                if (i == cont) {
-                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
+//                if (i == cont) {
+//                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
+//                }
+            } else if (i >= 15){
+                    JOptionPane.showMessageDialog(null, "No existe el libro primer if");
                 }
-            }
 
-        } catch (NullPointerException e) {
-        } catch (java.lang.NumberFormatException e) {
-
-        }
+//        } catch (NullPointerException e) {
+//        } catch (java.lang.NumberFormatException e) {
+//
+       }
     }//GEN-LAST:event_BusquedaLibroBtn1MouseClicked
 
     private void BusquedaLibroBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaLibroBtn1ActionPerformed
