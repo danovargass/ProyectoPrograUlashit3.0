@@ -151,8 +151,7 @@ public class IngresarCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    static Usuario ingresaUsuario[] = new Usuario[100];
-    int cont = 0;
+
     
     private void AgregarClientBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarClientBtnMouseClicked
         // TODO add your handling code here:
@@ -163,8 +162,8 @@ public class IngresarCliente extends javax.swing.JFrame {
             int cedulaName = Integer.parseInt(CedulaTxt.getText());
             int numeroName = Integer.parseInt(NumeroTxt.getText());
 
-            ingresaUsuario[cont] = new Usuario(cedulaName, numeroName, nombreName, apellidoName);
-            cont++;
+            Clientes.cliente[Clientes.cont] = new Usuario(cedulaName, numeroName, nombreName, apellidoName);
+            Clientes.cont++;
 
             JOptionPane.showMessageDialog(null, "Informacion se guardo");
 

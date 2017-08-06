@@ -42,7 +42,7 @@ public class BuscarCliente extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Buscar libro");
+        jLabel1.setText("Buscar Cliente");
 
         BusquedaCedulaBtn.setText("Busqueda por Cedula");
         BusquedaCedulaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -157,91 +157,62 @@ public class BuscarCliente extends javax.swing.JFrame {
     static Clientes baseClientes = new Clientes();
     int i, e, cont;
     static IngresarCliente ClientesRecientes = new IngresarCliente();
-    boolean error, confirmacion;
+    static boolean confirmacion;
     private void BusquedaCedulaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaCedulaBtnMouseClicked
         // TODO add your handling code here:
-        confirmacion = true;
-        try {
+        
+      try {
             baseClientes.llenarUsuario();
 
             int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cedula del cliente"));
 
             for (i = 0; i < baseClientes.cliente.length; i++) {
-                if (baseClientes.cliente[i].cedula == (busqueda)) {
-                    //Libro despliega = baseClientes.cliente[i];
-                    InventarioDisplayField.setText("" + baseClientes.cliente[i]);
-                    confirmacion = true;
-                    break;
-                }else{
-                    confirmacion = false;
-                }
-            }
-            if (confirmacion == false){
-                 for (i = 0; i < ClientesRecientes.ingresaUsuario.length; i++) {
-                if (ClientesRecientes.ingresaUsuario[i].cedula == (busqueda)) {
-                    //Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-                    InventarioDisplayField.setText("" + ClientesRecientes.ingresaUsuario[i]);
-                    confirmacion = true;
-                    cont = cont + 1;
-                    break;
+                if (baseClientes.cliente[i] != null) {
+                    if (baseClientes.cliente[i].cedula == (busqueda)) {
+                        InventarioDisplayField.setText("" + baseClientes.cliente[i]);
+                        confirmacion = true;
+                        break;
+                    } else {
+                    }
                 } else {
-           
-                    confirmacion = false;
                 }
-            } if (i == cont) {
-                JOptionPane.showMessageDialog(null, "No se encontro el cliente");
             }
-            }
-          
-
-           
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 
+        }
+        if (i == 15) {
+            confirmacion = false;
+            JOptionPane.showMessageDialog(null, "No se encontro el cliente");
         }
 
     }//GEN-LAST:event_BusquedaCedulaBtnMouseClicked
 
     private void BusquedaNombreBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaNombreBtnMouseClicked
         // TODO add your handling code here:
-        System.out.println("" + ClientesRecientes.ingresaUsuario[0]);
         try {
             baseClientes.llenarUsuario();
 
             String busqueda = JOptionPane.showInputDialog("Ingrese el nombre del cliente");
 
             for (i = 0; i < baseClientes.cliente.length; i++) {
-                if (baseClientes.cliente[i].nombre.equals(busqueda)) {
-                    //Libro despliega = baseClientes.cliente[i];
-                    InventarioDisplayField.setText("" + baseClientes.cliente[i]);
-                    confirmacion = true;
-                    break;
-                }else{
-                    confirmacion = false;
-                }
-            }
-            if (confirmacion == false){
-                 for (i = 0; i < ClientesRecientes.ingresaUsuario.length; i++) {
-                if (ClientesRecientes.ingresaUsuario[i].nombre.equals(busqueda)) {
-                    //Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-                    InventarioDisplayField.setText("" + ClientesRecientes.ingresaUsuario[i]);
-                    confirmacion = true;
-                    cont = cont + 1;
-                    break;
+                if (baseClientes.cliente[i] != null) {
+                    if (baseClientes.cliente[i].nombre.equals(busqueda)) {
+                        InventarioDisplayField.setText("" + baseClientes.cliente[i]);
+                        confirmacion = true;
+                        break;
+                    } else {
+                    }
                 } else {
-           
-                    confirmacion = false;
                 }
-            } if (i == cont) {
-                JOptionPane.showMessageDialog(null, "No se encontro el cliente");
             }
-            }
-          
-
-           
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 
+        }
+        if (i == 15) {
+            confirmacion = false;
+            JOptionPane.showMessageDialog(null, "No se encontro el cliente");
         }
 
 
@@ -249,50 +220,37 @@ public class BuscarCliente extends javax.swing.JFrame {
 
     private void CerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarMouseClicked
         // TODO add your handling code here:
-
+        MainMenu ejecuta = new MainMenu();
+        ejecuta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CerrarMouseClicked
 
     private void BusquedaApellidoBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaApellidoBtn1MouseClicked
-        confirmacion = true;
         try {
             baseClientes.llenarUsuario();
 
             String busqueda = JOptionPane.showInputDialog("Ingrese el apellido del cliente");
 
             for (i = 0; i < baseClientes.cliente.length; i++) {
-                if (baseClientes.cliente[i].apellido.equals(busqueda)) {
-                    //Libro despliega = baseClientes.cliente[i];
-                    InventarioDisplayField.setText("" + baseClientes.cliente[i]);
-                    confirmacion = true;
-                    break;
-                }else{
-                    confirmacion = false;
-                }
-            }
-            if (confirmacion == false){
-                 for (i = 0; i < ClientesRecientes.ingresaUsuario.length; i++) {
-                if (ClientesRecientes.ingresaUsuario[i].apellido.equals(busqueda)) {
-                    //Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-                    InventarioDisplayField.setText("" + ClientesRecientes.ingresaUsuario[i]);
-                    confirmacion = true;
-                    cont = cont + 1;
-                    break;
+                if (baseClientes.cliente[i] != null) {
+                    if (baseClientes.cliente[i].apellido.equals(busqueda)) {
+                        InventarioDisplayField.setText("" + baseClientes.cliente[i]);
+                        confirmacion = true;
+                        break;
+                    } else {
+                    }
                 } else {
-           
-                    confirmacion = false;
                 }
-            } if (i == cont) {
-                JOptionPane.showMessageDialog(null, "No se encontro el cliente");
             }
-            }
-          
-
-           
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 
         }
+        if (i == 15) {
+            confirmacion = false;
+            JOptionPane.showMessageDialog(null, "No se encontro el cliente");
+        }
+
     }//GEN-LAST:event_BusquedaApellidoBtn1MouseClicked
 
     private void BusquedaApellidoBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaApellidoBtn1ActionPerformed

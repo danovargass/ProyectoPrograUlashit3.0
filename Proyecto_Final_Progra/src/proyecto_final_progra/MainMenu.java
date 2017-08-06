@@ -191,7 +191,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    BuscarCliente Esencial = new BuscarCliente();
     private void BuscarClienteBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarClienteBtnMouseClicked
         // TODO add your handling code here:
 
@@ -247,9 +247,12 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
         try {
-            alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
+            if (Esencial.confirmacion == true) {
+                alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
+            } else if (Esencial.confirmacion == false) {
+                JOptionPane.showMessageDialog(null, "Primer esocoja el libro y el cliente");
+            }
         } catch (java.lang.NumberFormatException e) {
-
         }
 
         // TODO add your handling code here:

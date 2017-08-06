@@ -4,8 +4,8 @@ import javax.swing.JOptionPane;
 
 public class Clientes {
 
-    	static Usuario cliente [] = new Usuario [5];
-    
+    	static Usuario cliente [] = new Usuario [15];
+        static int cont = 5;
     public void llenarUsuario(){
         
         cliente[0] = new Usuario(1234, 1997, "EjemploNombre1", "EjemploApellido1");

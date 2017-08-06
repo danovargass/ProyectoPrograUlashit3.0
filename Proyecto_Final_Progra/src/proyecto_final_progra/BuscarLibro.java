@@ -6,6 +6,7 @@
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
+import static proyecto_final_progra.BuscarCliente.confirmacion;
 
 /**
  *
@@ -151,85 +152,58 @@ public class BuscarLibro extends javax.swing.JFrame {
 
     private void BusquedaIDBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaIDBtnMouseClicked
         // TODO add your handling code here:
-        confirmacion = true;
-        try {
+       try {
             biblioteca.llenarLibro();
 
             int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
 
             for (i = 0; i < biblioteca.libros.length; i++) {
-                if (biblioteca.libros[i].id == (busqueda)) {
-                    Libro despliega = biblioteca.libros[i];
-                    InventarioDisplayField.setText("" + biblioteca.libros[i]);
-                    confirmacion = true;
-                    break;
+                if (biblioteca.libros[i] != null) {
+                    if (biblioteca.libros[i].id == (busqueda)) {
+                        InventarioDisplayField.setText("" + biblioteca.libros[i]);
+                        confirmacion = true;
+                        break;
+                    } else {
+                    }
                 } else {
-                    confirmacion = false;
-                }
-//            }
-//            if (confirmacion == false) {
-//                for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
-//                    if (bibliotecaRecientes.ingresaLibros[i].id == (busqueda)) {
-//                        Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-//                        InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
-//                        confirmacion = true;
-//                        cont = cont + 1;
-//                        break;
-//                    } else {
-//
-//                        confirmacion = false;
-//                    }
-//                }
-                if (i == cont) {
-                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
                 }
             }
-
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 
+        }
+        if (i == 15) {
+            confirmacion = false;
+            JOptionPane.showMessageDialog(null, "No se encontro el libro");
         }
 
     }//GEN-LAST:event_BusquedaIDBtnMouseClicked
 
     private void BusquedaPublicacionBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaPublicacionBtnMouseClicked
         // TODO add your handling code here:
-        confirmacion = true;
         try {
             biblioteca.llenarLibro();
 
-            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la publicacion del libro"));
+            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año de publicacion del libro"));
 
             for (i = 0; i < biblioteca.libros.length; i++) {
-                if (biblioteca.libros[i].publicacion == (busqueda)) {
-                    Libro despliega = biblioteca.libros[i];
-                    InventarioDisplayField.setText("" + biblioteca.libros[i]);
-                    confirmacion = true;
-                    break;
+                if (biblioteca.libros[i] != null) {
+                    if (biblioteca.libros[i].publicacion == (busqueda)) {
+                        InventarioDisplayField.setText("" + biblioteca.libros[i]);
+                        confirmacion = true;
+                        break;
+                    } else {
+                    }
                 } else {
-                    confirmacion = false;
-                }
-
-//            if (confirmacion == false) {
-//                for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
-//                    if (bibliotecaRecientes.ingresaLibros[i].publicacion == (busqueda)) {
-//                        Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-//                        InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
-//                        confirmacion = true;
-//                        cont = cont + 1;
-//                        break;
-//                    } else {
-//
-//                        confirmacion = false;
-//                    }
-                if (i == cont) {
-                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
                 }
             }
-
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 
+        }
+        if (i == 15) {
+            confirmacion = false;
+            JOptionPane.showMessageDialog(null, "No se encontro el libro");
         }
 
 
@@ -237,13 +211,14 @@ public class BuscarLibro extends javax.swing.JFrame {
 
     private void CerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarMouseClicked
         // TODO add your handling code here:
-
+        MainMenu ejecuta = new MainMenu();
+        ejecuta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_CerrarMouseClicked
 
     private void BusquedaLibroBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaLibroBtn1MouseClicked
 
-//        try {
+        try {
             biblioteca.llenarLibro();
 
             String busqueda = JOptionPane.showInputDialog("Ingrese el nombre del libro");
@@ -252,41 +227,22 @@ public class BuscarLibro extends javax.swing.JFrame {
                 if (biblioteca.libros[i] != null) {
                     if (biblioteca.libros[i].nombre.equals(busqueda)) {
                         InventarioDisplayField.setText("" + biblioteca.libros[i]);
-                        System.out.println("i" + i);
+                        confirmacion = true;
                         break;
                     } else {
-//                        {
-//                        JOptionPane.showMessageDialog(null, "No se encontro el libro segundo if");
-//                        break;
-//                    }
                     }
-                       
-                //}
-
-//            if (!confirmacion) {
-//                for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
-//                    if (bibliotecaRecientes.ingresaLibros[i].nombre.equals(busqueda)) {
-//                        Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-//                        InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
-//                        confirmacion = true;
-//                        cont = cont + 1;
-//                        break;
-//                    } else {
-//
-//                        confirmacion = false;
-//                    }
-//                }
-//                if (i == cont) {
-//                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
-//                }
-            } else if (i >= 15){
-                    JOptionPane.showMessageDialog(null, "No existe el libro primer if");
+                } else {
                 }
+            }
+        } catch (NullPointerException e) {
+        } catch (java.lang.NumberFormatException e) {
 
-//        } catch (NullPointerException e) {
-//        } catch (java.lang.NumberFormatException e) {
-//
-       }
+        }
+        if (i == 15) {
+            confirmacion = false;
+            JOptionPane.showMessageDialog(null, "No se encontro el libro");
+        }
+
     }//GEN-LAST:event_BusquedaLibroBtn1MouseClicked
 
     private void BusquedaLibroBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaLibroBtn1ActionPerformed
