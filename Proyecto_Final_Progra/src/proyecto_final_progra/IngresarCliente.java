@@ -41,6 +41,7 @@ public class IngresarCliente extends javax.swing.JFrame {
         AgregarClientBtn = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
         NumeroTxt = new javax.swing.JTextField();
+        CerrarBtn = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,8 +61,20 @@ public class IngresarCliente extends javax.swing.JFrame {
                 AgregarClientBtnMouseClicked(evt);
             }
         });
+        AgregarClientBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarClientBtnActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Numero");
+
+        CerrarBtn.setText("Cerrar");
+        CerrarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CerrarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,25 +84,28 @@ public class IngresarCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addGap(36, 36, 36)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(NombreTxt)
-                                    .addComponent(ApellidoTxt)
-                                    .addComponent(CedulaTxt)
-                                    .addComponent(NumeroTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(255, 255, 255)
-                                .addComponent(AgregarClientBtn)))
-                        .addGap(0, 141, Short.MAX_VALUE)))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(NombreTxt)
+                            .addComponent(ApellidoTxt)
+                            .addComponent(CedulaTxt)
+                            .addComponent(NumeroTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(253, 253, 253)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(CerrarBtn))
+                    .addComponent(AgregarClientBtn))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,9 +130,11 @@ public class IngresarCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
                         .addComponent(NumeroTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(AgregarClientBtn)
-                .addGap(67, 67, 67))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CerrarBtn)
+                .addGap(82, 82, 82))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,6 +179,20 @@ public class IngresarCliente extends javax.swing.JFrame {
         
     }//GEN-LAST:event_AgregarClientBtnMouseClicked
 
+    private void AgregarClientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarClientBtnActionPerformed
+        // TODO add your handling code here:
+        
+        MainMenu ejecuta = new MainMenu();
+        ejecuta.setVisible(true);
+        this.dispose();
+        
+        
+    }//GEN-LAST:event_AgregarClientBtnActionPerformed
+
+    private void CerrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CerrarBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,6 +232,7 @@ public class IngresarCliente extends javax.swing.JFrame {
     private javax.swing.JToggleButton AgregarClientBtn;
     private javax.swing.JTextField ApellidoTxt;
     private javax.swing.JTextField CedulaTxt;
+    private javax.swing.JToggleButton CerrarBtn;
     private javax.swing.JTextField NombreTxt;
     private javax.swing.JTextField NumeroTxt;
     private javax.swing.JLabel jLabel1;

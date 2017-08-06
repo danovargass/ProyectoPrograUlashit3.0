@@ -45,6 +45,7 @@ public class IngresoLibro extends javax.swing.JFrame {
         PrecioTxt = new javax.swing.JTextField();
         IdTxt = new javax.swing.JTextField();
         AgregarBtn = new javax.swing.JToggleButton();
+        CerrarBtn = new javax.swing.JToggleButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -82,6 +83,13 @@ public class IngresoLibro extends javax.swing.JFrame {
             }
         });
 
+        CerrarBtn.setText("Cerrar");
+        CerrarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CerrarBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -90,7 +98,6 @@ public class IngresoLibro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AgregarBtn)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -106,7 +113,12 @@ public class IngresoLibro extends javax.swing.JFrame {
                             .addComponent(AnnoTxt)
                             .addComponent(EditorialTxt)
                             .addComponent(PrecioTxt)
-                            .addComponent(IdTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))))
+                            .addComponent(IdTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(CerrarBtn))
+                        .addComponent(AgregarBtn)))
                 .addContainerGap(296, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,7 +152,9 @@ public class IngresoLibro extends javax.swing.JFrame {
                     .addComponent(IdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addComponent(AgregarBtn)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CerrarBtn)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,6 +198,17 @@ public class IngresoLibro extends javax.swing.JFrame {
 
     }//GEN-LAST:event_AgregarBtnMouseClicked
 
+    private void CerrarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarBtnMouseClicked
+        // TODO add your handling code here:
+        
+        MainMenu ejecuta = new MainMenu();
+        ejecuta.setVisible(true);
+        this.dispose();
+        
+        
+        
+    }//GEN-LAST:event_CerrarBtnMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -223,6 +248,7 @@ public class IngresoLibro extends javax.swing.JFrame {
     private javax.swing.JToggleButton AgregarBtn;
     private javax.swing.JTextField AnnoTxt;
     private javax.swing.JTextField AutorTxt;
+    private javax.swing.JToggleButton CerrarBtn;
     private javax.swing.JTextField EditorialTxt;
     private javax.swing.JTextField IdTxt;
     private javax.swing.JTextField LibroTxt;
