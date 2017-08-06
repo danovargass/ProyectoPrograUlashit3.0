@@ -4,8 +4,8 @@ import javax.swing.JOptionPane;
 
 public class Inventario {
 
-    //int i;
-    static Libro libros[] = new Libro[5];
+    static Libro libros[] = new Libro[15];
+    static int cont = 5;
 
     public void llenarLibro() {
 
@@ -17,44 +17,31 @@ public class Inventario {
 
     }
 
-    public void demo() {
-
-    }
-
-    public void imprimeLibro() {
-
-        for (int i = 0; i < libros.length; i++) {
-            System.out.println(libros[i]);
-        }
-
-    }
-    
-    	public void buscarLibro(Libro libros[] ,int id){
-    		int count = 0;
-    		for(int i=0; i<libros.length;i++){
-    			System.out.println("Su contador es" + count);
-                    if ( libros[i].equals(id)){
-    			 JOptionPane.showMessageDialog(null, "Su libro es: " + libros);
-                    } else{
-    			 JOptionPane.showMessageDialog(null, "No se encontre el libro");
-                    }
-    		
-    		}
-        }
-
-    public void buscarLibro() {
- 
-        for (int i = 0; i < libros.length; i++) {
-        
-            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
-            if (libros[i].id == (busqueda)) {
-                System.out.println("Su nada es");
-                JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
-            } else {
-                JOptionPane.showMessageDialog(null, "No se encontro el libro");
-            }
-
-        }
-    }
-
+//    	public void buscarLibro(Libro libros[] ,int id){
+//    		int count = 0;
+//    		for(int i=0; i<libros.length;i++){
+//    			System.out.println("Su contador es" + count);
+//                    if ( libros[i].equals(id)){
+//    			 JOptionPane.showMessageDialog(null, "Su libro es: " + libros);
+//                    } else{
+//    			 JOptionPane.showMessageDialog(null, "No se encontre el libro");
+//                    }
+//    		
+//    		}
+//        }
+//
+//    public void buscarLibro() {
+// 
+//        for (int i = 0; i < libros.length; i++) {
+//        
+//            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
+//            if (libros[i].id == (busqueda)) {
+//                System.out.println("Su nada es");
+//                JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
+//            } else {
+//                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+//            }
+//
+//        }
+//    }
 }

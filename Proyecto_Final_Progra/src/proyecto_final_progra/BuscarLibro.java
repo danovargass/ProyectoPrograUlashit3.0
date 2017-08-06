@@ -148,6 +148,7 @@ public class BuscarLibro extends javax.swing.JFrame {
     int i, e, cont;
     static IngresoLibro bibliotecaRecientes = new IngresoLibro();
     boolean error, confirmacion;
+
     private void BusquedaIDBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaIDBtnMouseClicked
         // TODO add your handling code here:
         confirmacion = true;
@@ -162,29 +163,28 @@ public class BuscarLibro extends javax.swing.JFrame {
                     InventarioDisplayField.setText("" + biblioteca.libros[i]);
                     confirmacion = true;
                     break;
-                }else{
-                    confirmacion = false;
-                }
-            }
-            if (confirmacion == false){
-                 for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
-                if (bibliotecaRecientes.ingresaLibros[i].id == (busqueda)) {
-                    Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-                    InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
-                    confirmacion = true;
-                    cont = cont + 1;
-                    break;
                 } else {
-           
                     confirmacion = false;
                 }
-            } if (i == cont) {
-                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+//            }
+//            if (confirmacion == false) {
+//                for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
+//                    if (bibliotecaRecientes.ingresaLibros[i].id == (busqueda)) {
+//                        Libro despliega = bibliotecaRecientes.ingresaLibros[i];
+//                        InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
+//                        confirmacion = true;
+//                        cont = cont + 1;
+//                        break;
+//                    } else {
+//
+//                        confirmacion = false;
+//                    }
+//                }
+                if (i == cont) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
+                }
             }
-            }
-          
 
-           
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 
@@ -206,28 +206,27 @@ public class BuscarLibro extends javax.swing.JFrame {
                     InventarioDisplayField.setText("" + biblioteca.libros[i]);
                     confirmacion = true;
                     break;
-                }else{
-                    confirmacion = false;
-                }
-            }
-            if (confirmacion == false){
-                 for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
-                if (bibliotecaRecientes.ingresaLibros[i].publicacion == (busqueda)) {
-                    Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-                    InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
-                    confirmacion = true;
-                    cont = cont + 1;
-                    break;
                 } else {
-            
                     confirmacion = false;
                 }
-            } if (i == cont) {
-                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+
+//            if (confirmacion == false) {
+//                for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
+//                    if (bibliotecaRecientes.ingresaLibros[i].publicacion == (busqueda)) {
+//                        Libro despliega = bibliotecaRecientes.ingresaLibros[i];
+//                        InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
+//                        confirmacion = true;
+//                        cont = cont + 1;
+//                        break;
+//                    } else {
+//
+//                        confirmacion = false;
+//                    }
+                if (i == cont) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
+                }
             }
-            }
-          
-           
+
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 
@@ -250,35 +249,35 @@ public class BuscarLibro extends javax.swing.JFrame {
             String busqueda = JOptionPane.showInputDialog("Ingrese el nombre del libro");
 
             for (i = 0; i < biblioteca.libros.length; i++) {
-                if (biblioteca.libros[i].nombre == (busqueda)) {
-                    Libro despliega = biblioteca.libros[i];
-                    InventarioDisplayField.setText("" + biblioteca.libros[i]);
-                    confirmacion = true;
-                    break;
-                }else{
-                    confirmacion = false;
+                if (biblioteca.libros[i] != null) {
+                    if (biblioteca.libros[i].nombre.equals(busqueda)) {
+                        Libro despliega = biblioteca.libros[i];
+                        InventarioDisplayField.setText("" + biblioteca.libros[i]);
+                        confirmacion = true;
+                        break;
+                    } else {
+                        confirmacion = false;
+                    }
                 }
-            }
-            if (confirmacion == false){
-                 for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
-                if (bibliotecaRecientes.ingresaLibros[i].nombre == (busqueda)) {
-                    Libro despliega = bibliotecaRecientes.ingresaLibros[i];
-                    InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
-                    confirmacion = true;
-                    cont = cont + 1;
-                    break;
-                } else {
-                 
-                    confirmacion = false;
-                }
-            } if (i == cont) {
-                JOptionPane.showMessageDialog(null, "No se encontro el libro");
-            }
-            }
-          
 
-       
-           
+//            if (!confirmacion) {
+//                for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
+//                    if (bibliotecaRecientes.ingresaLibros[i].nombre.equals(busqueda)) {
+//                        Libro despliega = bibliotecaRecientes.ingresaLibros[i];
+//                        InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
+//                        confirmacion = true;
+//                        cont = cont + 1;
+//                        break;
+//                    } else {
+//
+//                        confirmacion = false;
+//                    }
+//                }
+                if (i == cont) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el libro");
+                }
+            }
+
         } catch (NullPointerException e) {
         } catch (java.lang.NumberFormatException e) {
 

@@ -58,11 +58,6 @@ public class MainMenu extends javax.swing.JFrame {
                 InventarioBtnMouseClicked(evt);
             }
         });
-        InventarioBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InventarioBtnActionPerformed(evt);
-            }
-        });
 
         AlquilerBtn.setText("Alquilar");
         AlquilerBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -202,6 +197,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         IngresarCliente ejecuta = new IngresarCliente();
         ejecuta.setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_BuscarClienteBtnMouseClicked
 
@@ -209,18 +205,18 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         IngresoLibro ejecuta = new IngresoLibro();
         ejecuta.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_AgregaInvBtnActionPerformed
 
     private void FacturaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaBtnMouseClicked
         // TODO add your handling code here:
 
         //FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + costoFinal + " colones\n"
-            //        + baseClientes.cliente[e]);
+        //        + baseClientes.cliente[e]);
         try {
-            System.out.println("i = " + i + "e = " + e);
             if (alquiler != 0) {
                 FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + (biblioteca.libros[i].precio * alquiler) + " colones\n"
-                    + baseClientes.cliente[e]);
+                        + baseClientes.cliente[e]);
             }
 
         } catch (java.lang.NullPointerException e) {
@@ -235,10 +231,11 @@ public class MainMenu extends javax.swing.JFrame {
     private void ClientesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesBtnMouseClicked
 
         try {
-         BuscarCliente ejecuta1 = new BuscarCliente();
-        ejecuta1.setVisible(true);
-        }catch (java.lang.NumberFormatException e){
-            
+            BuscarCliente ejecuta1 = new BuscarCliente();
+            ejecuta1.setVisible(true);
+            this.dispose();
+        } catch (java.lang.NumberFormatException e) {
+
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_ClientesBtnMouseClicked
@@ -246,9 +243,6 @@ public class MainMenu extends javax.swing.JFrame {
     private void AlquilerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlquilerBtnActionPerformed
         // TODO add your handling code here:
 
-        ////////
-        //este es el menu que se estaria desplegando ahorita, digame que sugerencias tiene.
-        ///////
     }//GEN-LAST:event_AlquilerBtnActionPerformed
 
     private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
@@ -261,15 +255,12 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AlquilerBtnMouseClicked
 
-    private void InventarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventarioBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_InventarioBtnActionPerformed
-
     private void InventarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventarioBtnMouseClicked
         // TODO add your handling code here
 
         BuscarLibro ejecuta = new BuscarLibro();
         ejecuta.setVisible(true);
+        this.dispose();
 
 //                try {
 //                        biblioteca.llenarLibro();

@@ -52,7 +52,7 @@ public class Usuario {
 	    public String toString() {
 	        return "Detalle del usuario:\n"
 	                + "-cedula: " + cedula + "\n"
-	                + "-numeroTelefono: " + numeroTelefono + "\n"
+	                + "-numero Telefono: " + numeroTelefono + "\n"
 	                + "-Nombre: " + nombre + "\n"
 	                + "-Apellido: " + apellido + "\n"
 	                + "";

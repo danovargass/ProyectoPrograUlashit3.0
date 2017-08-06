@@ -21,7 +21,7 @@ public class Proyecto_Final_Progra {
         //Cajero cajero1 = new Cajero();
         //cajero1.login();
         ejecuta.llenarLibro();
-        ejecuta.buscarLibro();
+        
     }
     
 }

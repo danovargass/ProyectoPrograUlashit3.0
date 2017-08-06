@@ -172,8 +172,7 @@ public class IngresoLibro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    static Libro ingresaLibros[] = new Libro[99];
-    int cont = 0;
+
     private void AgregarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarBtnMouseClicked
         // TODO add your handling code here:
         try {
@@ -184,8 +183,8 @@ public class IngresoLibro extends javax.swing.JFrame {
             int precioName = Integer.parseInt(PrecioTxt.getText());
             int annoName = Integer.parseInt(AnnoTxt.getText());
 
-            ingresaLibros[cont] = new Libro(idName, annoName, precioName, libroName, autorName, editorialName);
-            cont++;
+            Inventario.libros[Inventario.cont] = new Libro(idName, annoName, precioName, libroName, autorName, editorialName);
+            Inventario.cont++;
 
             JOptionPane.showMessageDialog(null, "Informacion se guardo");
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -198,13 +197,12 @@ public class IngresoLibro extends javax.swing.JFrame {
 
     private void CerrarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarBtnMouseClicked
         // TODO add your handling code here:
-        
+
         MainMenu ejecuta = new MainMenu();
         ejecuta.setVisible(true);
         this.dispose();
-        
-        
-        
+
+
     }//GEN-LAST:event_CerrarBtnMouseClicked
 
     /**

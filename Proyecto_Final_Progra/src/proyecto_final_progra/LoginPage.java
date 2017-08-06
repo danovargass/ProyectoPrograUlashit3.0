@@ -118,13 +118,11 @@ public class LoginPage extends javax.swing.JFrame {
 
                 if (id == 1155 && nombre.contains("Juan")) {
                     JOptionPane.showMessageDialog(null, "Su ingreso ha sido correcto");
-                    //this.dispose();
                     MainMenu ejecuta = new MainMenu();
                     ejecuta.setVisible(true);
                     this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Ingreso erroneo");
-                    //i = i - 1;
                     break;
                 }
             }
@@ -133,19 +131,6 @@ public class LoginPage extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             System.out.println("Por favor intente de nuevo");
         }
-        //este metodo despliega el menu principal para el cajero q no tiene nada implementado ahorita
-        //peo ya lo ejecuta
-        
-        //////
-        //quite el contador - 1 pq en realidad metiendo un break se resetea todo y asi no se encicla el proceso
-        //tambien meti el codigo dentro del if para q no entrara a la siguiente pagina si le daba ingreso erroneo
-        /////
-        
-        
-//        MainMenu ejecuta = new MainMenu();
-//        ejecuta.setVisible(true);
-//        this.dispose();
-
     }//GEN-LAST:event_VerifyBtnMouseClicked
 
     /**
