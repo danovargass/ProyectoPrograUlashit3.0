@@ -49,9 +49,10 @@
                           <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="BusquedaIDBtn" min="-2" max="-2" attributes="0"/>
-                              <Component id="BusquedaLibroBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="BusquedaPublicacionBtn" min="-2" max="-2" attributes="0"/>
+                              <Component id="BusquedaLibroBtn1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="190" max="32767" attributes="0"/>
+                          <EmptySpace pref="114" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
@@ -74,7 +75,9 @@
                       <Group type="102" attributes="0">
                           <Component id="BusquedaIDBtn" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="BusquedaLibroBtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="BusquedaPublicacionBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="BusquedaLibroBtn1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -125,12 +128,12 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JToggleButton" name="BusquedaLibroBtn">
+        <Component class="javax.swing.JToggleButton" name="BusquedaPublicacionBtn">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Busqueda por Libro"/>
+            <Property name="text" type="java.lang.String" value="Busqueda por a&#xf1;o de publicacion"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BusquedaLibroBtnMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BusquedaPublicacionBtnMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="Cerrar">
@@ -139,6 +142,15 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CerrarMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="BusquedaLibroBtn1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Busqueda por nombre de Libro"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BusquedaLibroBtn1MouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BusquedaLibroBtn1ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

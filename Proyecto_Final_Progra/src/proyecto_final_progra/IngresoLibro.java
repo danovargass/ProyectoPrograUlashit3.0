@@ -6,6 +6,7 @@
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
+import static proyecto_final_progra.BuscarLibro.bibliotecaRecientes;
 
 /**
  *
@@ -159,23 +160,22 @@ public class IngresoLibro extends javax.swing.JFrame {
 
     static Libro ingresaLibros[] = new Libro[100];
     int cont = 0;
-
+   static int librosAgregados = -1;
     private void AgregarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarBtnMouseClicked
         // TODO add your handling code here:
-
+        librosAgregados = librosAgregados + 1;
         try {
             String libroName = LibroTxt.getText();
             String autorName = AutorTxt.getText();
             String editorialName = EditorialTxt.getText();
             int idName = Integer.parseInt(IdTxt.getText());
             int precioName = Integer.parseInt(PrecioTxt.getText());
-            int annoName = Integer.parseInt(IdTxt.getText());
+            int annoName = Integer.parseInt(AnnoTxt.getText());
 
             ingresaLibros[cont] = new Libro(idName, annoName, precioName, libroName, autorName, editorialName);
             cont++;
 
             JOptionPane.showMessageDialog(null, "Informacion se guardo");
-
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Out of bounds");
         } catch (NumberFormatException e) {

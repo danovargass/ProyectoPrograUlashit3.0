@@ -293,29 +293,29 @@ public class MainMenu extends javax.swing.JFrame {
         BuscarLibro ejecuta = new BuscarLibro();
         ejecuta.setVisible(true);
 
-        //        try {
-            //            biblioteca.llenarLibro();
-            //
-            //            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
-            //
-            //            for (i = 0; i < biblioteca.libros.length; i++) {
-                //                if (biblioteca.libros[i].id == (busqueda)) {
-                    //                    Libro despliega = biblioteca.libros[i];
-                    //                    InventarioDisplay.setText("" + biblioteca.libros[i]);
-                    //
-                    //                    break;
-                    //                } else {
-                    //                }
-                //            }
-            //            if (i == 5) {
-                //                JOptionPane.showMessageDialog(null, "No se encontro el libro");
-                //            }
-            //        } catch (NullPointerException e) {
-            //        } catch (java.lang.NumberFormatException e) {
-            //
-            //        }
-
-        InventarioDisplay.setText("" + biblioteca.libros[i]);
+//                try {
+//                        biblioteca.llenarLibro();
+//            
+//                        int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
+//            
+//                        for (i = 0; i < biblioteca.libros.length; i++) {
+//                                if (biblioteca.libros[i].id == (busqueda)) {
+//                                        Libro despliega = biblioteca.libros[i];
+//                                        InventarioDisplay.setText("" + biblioteca.libros[i]);
+//                    
+//                                        break;
+//                                    } else {
+//                                    }
+//                            }
+//                        if (i == 5) {
+//                                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+//                            }
+//                    } catch (NullPointerException e) {
+//                    } catch (java.lang.NumberFormatException e) {
+//            
+//                    }
+//
+//        InventarioDisplay.setText("" + biblioteca.libros[i]);
 
     }//GEN-LAST:event_InventarioBtnMouseClicked
     int alquiler, costoDiario;

@@ -34,8 +34,9 @@ public class BuscarLibro extends javax.swing.JFrame {
         BusquedaIDBtn = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         InventarioDisplayField = new javax.swing.JTextArea();
-        BusquedaLibroBtn = new javax.swing.JToggleButton();
+        BusquedaPublicacionBtn = new javax.swing.JToggleButton();
         Cerrar = new javax.swing.JToggleButton();
+        BusquedaLibroBtn1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,10 +55,10 @@ public class BuscarLibro extends javax.swing.JFrame {
         InventarioDisplayField.setRows(5);
         jScrollPane1.setViewportView(InventarioDisplayField);
 
-        BusquedaLibroBtn.setText("Busqueda por Libro");
-        BusquedaLibroBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        BusquedaPublicacionBtn.setText("Busqueda por año de publicacion");
+        BusquedaPublicacionBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BusquedaLibroBtnMouseClicked(evt);
+                BusquedaPublicacionBtnMouseClicked(evt);
             }
         });
 
@@ -65,6 +66,18 @@ public class BuscarLibro extends javax.swing.JFrame {
         Cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CerrarMouseClicked(evt);
+            }
+        });
+
+        BusquedaLibroBtn1.setText("Busqueda por nombre de Libro");
+        BusquedaLibroBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BusquedaLibroBtn1MouseClicked(evt);
+            }
+        });
+        BusquedaLibroBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaLibroBtn1ActionPerformed(evt);
             }
         });
 
@@ -82,8 +95,9 @@ public class BuscarLibro extends javax.swing.JFrame {
                         .addGap(112, 112, 112)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BusquedaIDBtn)
-                            .addComponent(BusquedaLibroBtn))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE))
+                            .addComponent(BusquedaPublicacionBtn)
+                            .addComponent(BusquedaLibroBtn1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Cerrar)
@@ -101,7 +115,9 @@ public class BuscarLibro extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BusquedaIDBtn)
                         .addGap(37, 37, 37)
-                        .addComponent(BusquedaLibroBtn)
+                        .addComponent(BusquedaPublicacionBtn)
+                        .addGap(26, 26, 26)
+                        .addComponent(BusquedaLibroBtn1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -130,7 +146,8 @@ public class BuscarLibro extends javax.swing.JFrame {
     static Inventario biblioteca = new Inventario();
     Clientes baseClientes = new Clientes();
     int i, e;
-
+    static IngresoLibro bibliotecaRecientes = new IngresoLibro();
+    boolean confirmacion;
     private void BusquedaIDBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaIDBtnMouseClicked
         // TODO add your handling code here:
 
@@ -141,56 +158,95 @@ public class BuscarLibro extends javax.swing.JFrame {
 
             for (i = 0; i < biblioteca.libros.length; i++) {
                 if (biblioteca.libros[i].id == (busqueda)) {
-                    System.out.println("entro");
-                    //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
                     Libro despliega = biblioteca.libros[i];
                     InventarioDisplayField.setText("" + biblioteca.libros[i]);
+
                     break;
-                } else {
-
                 }
-
+//                System.out.println("entro");
+                
+                JOptionPane.showMessageDialog(null, "No se encontro el libro");
             }
-            System.out.println("no se encontro");
         } catch (NullPointerException e) {
-            System.out.println("Se cae no se por que....");
+        } catch (java.lang.NumberFormatException e) {
+
         }
 
     }//GEN-LAST:event_BusquedaIDBtnMouseClicked
 
-    private void BusquedaLibroBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaLibroBtnMouseClicked
+    private void BusquedaPublicacionBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaPublicacionBtnMouseClicked
         // TODO add your handling code here:
 
+        try {
+            biblioteca.llenarLibro();
+
+            int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la publicacion del libro"));
+
+            for (i = 0; i < biblioteca.libros.length; i++) {
+                if (biblioteca.libros[i].publicacion == (busqueda)) {
+                    Libro despliega = biblioteca.libros[i];
+                    InventarioDisplayField.setText("" + biblioteca.libros[i]);
+         
+                    break;
+                }
+            }
+            
+                    for (i = 0; i < bibliotecaRecientes.ingresaLibros.length; i++) {
+                if (bibliotecaRecientes.ingresaLibros[i].publicacion == (busqueda)) {
+                    Libro despliega = bibliotecaRecientes.ingresaLibros[i];
+                    InventarioDisplayField.setText("" + bibliotecaRecientes.ingresaLibros[i]);
+                    confirmacion = false;
+                    break;
+                    }else{
+                    confirmacion = true;
+                }
+                }
+                   
+                    System.out.println("i vale: " + i + "y libros agregados vale: " + bibliotecaRecientes.librosAgregados);
+            if (confirmacion == true) {
+                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+            }
+        } catch (NullPointerException e) {
+        } catch (java.lang.NumberFormatException e) {
+
+        }
+
+
+    }//GEN-LAST:event_BusquedaPublicacionBtnMouseClicked
+
+    private void CerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarMouseClicked
+        // TODO add your handling code here:
+
+        this.dispose();
+    }//GEN-LAST:event_CerrarMouseClicked
+
+    private void BusquedaLibroBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaLibroBtn1MouseClicked
         try {
             biblioteca.llenarLibro();
 
             String busqueda = JOptionPane.showInputDialog("Ingrese el nombre del libro");
 
             for (i = 0; i < biblioteca.libros.length; i++) {
-                if (biblioteca.libros[i].nombre == busqueda) {
-                    System.out.println("entro");
-                    //JOptionPane.showMessageDialog(null, "Su libro es: " + libros[i]);
+                if (biblioteca.libros[i].nombre.equals(busqueda)) {
                     Libro despliega = biblioteca.libros[i];
                     InventarioDisplayField.setText("" + biblioteca.libros[i]);
+
                     break;
                 } else {
-
                 }
-
             }
-            System.out.println("no se encontro");
+            if (i == 5) {
+                JOptionPane.showMessageDialog(null, "No se encontro el libro");
+            }
         } catch (NullPointerException e) {
-            System.out.println("Se cae no se por que....");
+        } catch (java.lang.NumberFormatException e) {
+
         }
+    }//GEN-LAST:event_BusquedaLibroBtn1MouseClicked
 
-
-    }//GEN-LAST:event_BusquedaLibroBtnMouseClicked
-
-    private void CerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarMouseClicked
+    private void BusquedaLibroBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaLibroBtn1ActionPerformed
         // TODO add your handling code here:
-        
-        this.dispose();
-    }//GEN-LAST:event_CerrarMouseClicked
+    }//GEN-LAST:event_BusquedaLibroBtn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,7 +285,8 @@ public class BuscarLibro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BusquedaIDBtn;
-    private javax.swing.JToggleButton BusquedaLibroBtn;
+    private javax.swing.JToggleButton BusquedaLibroBtn1;
+    private javax.swing.JToggleButton BusquedaPublicacionBtn;
     private javax.swing.JToggleButton Cerrar;
     private javax.swing.JTextArea InventarioDisplayField;
     private javax.swing.JLabel jLabel1;
