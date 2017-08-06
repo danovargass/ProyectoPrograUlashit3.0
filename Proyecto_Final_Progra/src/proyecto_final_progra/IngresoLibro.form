@@ -59,7 +59,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="AgregarBtn" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -78,6 +77,13 @@
                               <Component id="PrecioTxt" max="32767" attributes="0"/>
                               <Component id="IdTxt" pref="272" max="32767" attributes="0"/>
                           </Group>
+                      </Group>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="CerrarBtn" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="AgregarBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="296" max="32767" attributes="0"/>
@@ -121,7 +127,9 @@
                   </Group>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="AgregarBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="77" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="CerrarBtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="39" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -184,6 +192,14 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AgregarBtnMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="CerrarBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cerrar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CerrarBtnMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
