@@ -1,4 +1,3 @@
-
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
@@ -63,6 +62,16 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         RetornoBtn.setText("Retorno");
+        RetornoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RetornoBtnMouseClicked(evt);
+            }
+        });
+        RetornoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RetornoBtnActionPerformed(evt);
+            }
+        });
 
         ClientesBtn.setText("Clientes");
         ClientesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -243,6 +252,22 @@ public class MainMenu extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_InventarioBtnMouseClicked
+
+    private void RetornoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetornoBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RetornoBtnActionPerformed
+
+    private void RetornoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetornoBtnMouseClicked
+        // TODO add your handling code here:
+
+        int diasAlquilados = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuantos dias han transcurrido desde la fecha de prestamo"));
+        if (diasAlquilados > alquiler) {
+            JOptionPane.showMessageDialog(null, "Tiene una mora de: " + diasAlquilados * 1000);
+        } else {
+            JOptionPane.showMessageDialog(null, "Gracias por devolver el libro a tiempo.");
+        }
+
+    }//GEN-LAST:event_RetornoBtnMouseClicked
     int alquiler, costoDiario;
     Inventario biblioteca = new Inventario();
     Clientes baseClientes = new Clientes();

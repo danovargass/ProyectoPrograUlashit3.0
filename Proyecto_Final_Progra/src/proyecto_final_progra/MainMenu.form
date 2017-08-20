@@ -141,6 +141,10 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Retorno"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RetornoBtnMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RetornoBtnActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="ClientesBtn">
           <Properties>
