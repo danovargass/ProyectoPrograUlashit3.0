@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
@@ -65,11 +61,6 @@ public class MainMenu extends javax.swing.JFrame {
                 AlquilerBtnMouseClicked(evt);
             }
         });
-        AlquilerBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AlquilerBtnActionPerformed(evt);
-            }
-        });
 
         RetornoBtn.setText("Retorno");
 
@@ -77,11 +68,6 @@ public class MainMenu extends javax.swing.JFrame {
         ClientesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ClientesBtnMouseClicked(evt);
-            }
-        });
-        ClientesBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ClientesBtnActionPerformed(evt);
             }
         });
 
@@ -224,10 +210,6 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_FacturaBtnMouseClicked
 
-    private void ClientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ClientesBtnActionPerformed
-
     private void ClientesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientesBtnMouseClicked
 
         try {
@@ -239,11 +221,6 @@ public class MainMenu extends javax.swing.JFrame {
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_ClientesBtnMouseClicked
-
-    private void AlquilerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlquilerBtnActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_AlquilerBtnActionPerformed
 
     private void AlquilerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlquilerBtnMouseClicked
         try {
@@ -264,30 +241,6 @@ public class MainMenu extends javax.swing.JFrame {
         BuscarLibro ejecuta = new BuscarLibro();
         ejecuta.setVisible(true);
         this.dispose();
-
-//                try {
-//                        biblioteca.llenarLibro();
-//            
-//                        int busqueda = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el ID del libro"));
-//            
-//                        for (i = 0; i < biblioteca.libros.length; i++) {
-//                                if (biblioteca.libros[i].id == (busqueda)) {
-//                                        Libro despliega = biblioteca.libros[i];
-//                                        InventarioDisplay.setText("" + biblioteca.libros[i]);
-//                    
-//                                        break;
-//                                    } else {
-//                                    }
-//                            }
-//                        if (i == 5) {
-//                                JOptionPane.showMessageDialog(null, "No se encontro el libro");
-//                            }
-//                    } catch (NullPointerException e) {
-//                    } catch (java.lang.NumberFormatException e) {
-//            
-//                    }
-//
-//        InventarioDisplay.setText("" + biblioteca.libros[i]);
 
     }//GEN-LAST:event_InventarioBtnMouseClicked
     int alquiler, costoDiario;

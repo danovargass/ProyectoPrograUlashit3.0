@@ -85,8 +85,7 @@ public class LandingPage extends javax.swing.JFrame {
         ejecuta.setVisible(true);
         this.dispose();
         
-        //hay q cambiar el log in a generar una ventana nueva donde se ingrese la informacion del metodo o de un metodo nuevo
-        //porque en si es mas facil programar desde otra pantalla en vez de empatarlo con ese metodo.
+        //El siguiente metodo existe para llevar al usuario a la pagina de login.
         
     }//GEN-LAST:event_LogInBtnMouseClicked
 

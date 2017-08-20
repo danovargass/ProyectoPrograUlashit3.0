@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
@@ -74,11 +70,6 @@ public class BuscarLibro extends javax.swing.JFrame {
         BusquedaLibroBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BusquedaLibroBtn1MouseClicked(evt);
-            }
-        });
-        BusquedaLibroBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusquedaLibroBtn1ActionPerformed(evt);
             }
         });
 
@@ -244,10 +235,6 @@ public class BuscarLibro extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BusquedaLibroBtn1MouseClicked
-
-    private void BusquedaLibroBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaLibroBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BusquedaLibroBtn1ActionPerformed
 
     /**
      * @param args the command line arguments

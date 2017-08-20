@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
@@ -29,69 +25,49 @@ public class LoginPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         HeaderLoginPage = new javax.swing.JLabel();
         NombreTxt = new javax.swing.JLabel();
         NombreTxtField = new javax.swing.JTextField();
         IDtxt = new javax.swing.JLabel();
-        VerifyBtn = new javax.swing.JToggleButton();
         PasswordTxtField = new javax.swing.JPasswordField();
+        VerificarBtn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HeaderLoginPage.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
         HeaderLoginPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HeaderLoginPage.setText("Ingrese sus datos");
+        jPanel1.add(HeaderLoginPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 488, -1));
 
+        NombreTxt.setBackground(new java.awt.Color(0, 0, 0));
+        NombreTxt.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         NombreTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NombreTxt.setText("Nombre:");
+        jPanel1.add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 110, -1));
+        jPanel1.add(NombreTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 200, -1));
 
         IDtxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         IDtxt.setText("ID:");
+        jPanel1.add(IDtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, -1));
+        jPanel1.add(PasswordTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 200, -1));
 
-        VerifyBtn.setText("Verificar");
-        VerifyBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        VerificarBtn.setText("Verificar");
+        VerificarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                VerifyBtnMouseClicked(evt);
+                VerificarBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(VerificarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HeaderLoginPage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(IDtxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(NombreTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PasswordTxtField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(NombreTxtField))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(VerifyBtn)
-                .addGap(178, 178, 178))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(HeaderLoginPage)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombreTxt)
-                    .addComponent(NombreTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IDtxt)
-                    .addComponent(PasswordTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
-                .addComponent(VerifyBtn)
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 301));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,11 +82,9 @@ public class LoginPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void VerifyBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerifyBtnMouseClicked
-        
+
+    private void VerificarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerificarBtnMouseClicked
         //Esta ventana se creo para intentar hacer el UI/UX mas amigable para el usuario.
-        
         try {
             for (int i = 0; i == 0; i++) {
                 String nombre = NombreTxtField.getText();
@@ -121,17 +95,17 @@ public class LoginPage extends javax.swing.JFrame {
                     MainMenu ejecuta = new MainMenu();
                     ejecuta.setVisible(true);
                     this.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Ingreso erroneo");
-                    break;
+
                 }
             }
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Out of bounds");
         } catch (NumberFormatException e) {
-            System.out.println("Por favor intente de nuevo");
+            JOptionPane.showMessageDialog(null, "El espacio nombre solo acepta letras.\n"
+                    + "El espacio Id solo acepta numeros.\n"
+                    + "Por favor intente de nuevo");
         }
-    }//GEN-LAST:event_VerifyBtnMouseClicked
+
+
+    }//GEN-LAST:event_VerificarBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -174,7 +148,9 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JLabel NombreTxt;
     private javax.swing.JTextField NombreTxtField;
     private javax.swing.JPasswordField PasswordTxtField;
-    private javax.swing.JToggleButton VerifyBtn;
+    private javax.swing.JButton VerificarBtn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

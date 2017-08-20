@@ -135,7 +135,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AlquilerBtnMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlquilerBtnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="RetornoBtn">
@@ -149,7 +148,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ClientesBtnMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClientesBtnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="FacturaBtn">

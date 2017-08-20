@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
@@ -50,11 +46,6 @@ public class BuscarCliente extends javax.swing.JFrame {
                 BusquedaCedulaBtnMouseClicked(evt);
             }
         });
-        BusquedaCedulaBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusquedaCedulaBtnActionPerformed(evt);
-            }
-        });
 
         InventarioDisplayField.setColumns(20);
         InventarioDisplayField.setRows(5);
@@ -64,11 +55,6 @@ public class BuscarCliente extends javax.swing.JFrame {
         BusquedaNombreBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BusquedaNombreBtnMouseClicked(evt);
-            }
-        });
-        BusquedaNombreBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusquedaNombreBtnActionPerformed(evt);
             }
         });
 
@@ -83,11 +69,6 @@ public class BuscarCliente extends javax.swing.JFrame {
         BusquedaApellidoBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BusquedaApellidoBtn1MouseClicked(evt);
-            }
-        });
-        BusquedaApellidoBtn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BusquedaApellidoBtn1ActionPerformed(evt);
             }
         });
 
@@ -153,7 +134,6 @@ public class BuscarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     int alquiler, costoDiario, costoFinal;
-    //static Inventario biblioteca = new Inventario();
     static Clientes baseClientes = new Clientes();
     int i, e, cont;
     static IngresarCliente ClientesRecientes = new IngresarCliente();
@@ -185,7 +165,8 @@ public class BuscarCliente extends javax.swing.JFrame {
             confirmacion = false;
             JOptionPane.showMessageDialog(null, "No se encontro el cliente");
         }
-
+            //este metodo se encarga de buscar dentro de las listas de clientes creadas, los clientes que igualen
+            //los datos ingresados. Este en particular busca por Cedula.
     }//GEN-LAST:event_BusquedaCedulaBtnMouseClicked
 
     private void BusquedaNombreBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaNombreBtnMouseClicked
@@ -214,8 +195,8 @@ public class BuscarCliente extends javax.swing.JFrame {
             confirmacion = false;
             JOptionPane.showMessageDialog(null, "No se encontro el cliente");
         }
-
-
+            //este metodo al igual que el de arriba, se encarga de buscar dentro de las listas de clientes.
+            //este busca por nombre de cliente.
     }//GEN-LAST:event_BusquedaNombreBtnMouseClicked
 
     private void CerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarMouseClicked
@@ -250,20 +231,9 @@ public class BuscarCliente extends javax.swing.JFrame {
             confirmacion = false;
             JOptionPane.showMessageDialog(null, "No se encontro el cliente");
         }
-
+            //este metodo busca por apellido. todas estas funciones estan dentro de una ventana de jFrame
+            //que habilita estas funcionalidades.
     }//GEN-LAST:event_BusquedaApellidoBtn1MouseClicked
-
-    private void BusquedaApellidoBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaApellidoBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BusquedaApellidoBtn1ActionPerformed
-
-    private void BusquedaCedulaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaCedulaBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BusquedaCedulaBtnActionPerformed
-
-    private void BusquedaNombreBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaNombreBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BusquedaNombreBtnActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto_final_progra;
 
 import javax.swing.JOptionPane;
-//import static proyecto_final_progra.IngresoLibro.ingresaLibros;
 
 /**
  *
@@ -20,7 +14,7 @@ public class IngresarCliente extends javax.swing.JFrame {
     public IngresarCliente() {
         initComponents();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,11 +53,6 @@ public class IngresarCliente extends javax.swing.JFrame {
         AgregarClientBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AgregarClientBtnMouseClicked(evt);
-            }
-        });
-        AgregarClientBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarClientBtnActionPerformed(evt);
             }
         });
 
@@ -152,10 +141,9 @@ public class IngresarCliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    
     private void AgregarClientBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarClientBtnMouseClicked
         // TODO add your handling code here:
-        
+
         try {
             String nombreName = NombreTxt.getText();
             String apellidoName = ApellidoTxt.getText();
@@ -172,19 +160,8 @@ public class IngresarCliente extends javax.swing.JFrame {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "no se pueden ingresar numeros en el año");
         }
-        
-        
-        
-        
-    }//GEN-LAST:event_AgregarClientBtnMouseClicked
 
-    private void AgregarClientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarClientBtnActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
-        
-    }//GEN-LAST:event_AgregarClientBtnActionPerformed
+    }//GEN-LAST:event_AgregarClientBtnMouseClicked
 
     private void CerrarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarBtnActionPerformed
         // TODO add your handling code here:
