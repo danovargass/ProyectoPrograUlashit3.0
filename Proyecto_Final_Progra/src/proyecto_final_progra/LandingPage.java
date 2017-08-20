@@ -30,12 +30,18 @@ public class LandingPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         HeaderLandingPage = new javax.swing.JLabel();
         LogInBtn = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        HeaderLandingPage.setBackground(new java.awt.Color(255, 255, 255));
         HeaderLandingPage.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
+        HeaderLandingPage.setForeground(new java.awt.Color(255, 255, 255));
         HeaderLandingPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HeaderLandingPage.setText("Sistema de Alquiler de Libros");
+        jPanel1.add(HeaderLandingPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 850, -1));
 
         LogInBtn.setText("Log in");
         LogInBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -43,36 +49,20 @@ public class LandingPage extends javax.swing.JFrame {
                 LogInBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 136, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HeaderLandingPage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(370, Short.MAX_VALUE)
-                .addComponent(LogInBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(364, 364, 364))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(HeaderLandingPage)
-                .addGap(186, 186, 186)
-                .addComponent(LogInBtn)
-                .addContainerGap(275, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background-pattern.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
         );
 
         pack();
@@ -127,6 +117,7 @@ public class LandingPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HeaderLandingPage;
     private javax.swing.JToggleButton LogInBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

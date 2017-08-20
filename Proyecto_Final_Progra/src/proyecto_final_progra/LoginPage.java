@@ -41,22 +41,25 @@ public class LoginPage extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        HeaderLoginPage.setBackground(new java.awt.Color(255, 255, 255));
         HeaderLoginPage.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
         HeaderLoginPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HeaderLoginPage.setText("Ingrese sus datos");
         jPanel1.add(HeaderLoginPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 488, -1));
 
-        NombreTxt.setBackground(new java.awt.Color(0, 0, 0));
+        NombreTxt.setBackground(new java.awt.Color(255, 255, 255));
         NombreTxt.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         NombreTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NombreTxt.setText("Nombre:");
-        jPanel1.add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 110, -1));
-        jPanel1.add(NombreTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 200, -1));
+        jPanel1.add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, -1));
+        jPanel1.add(NombreTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 200, -1));
 
+        IDtxt.setBackground(new java.awt.Color(255, 255, 255));
+        IDtxt.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         IDtxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         IDtxt.setText("ID:");
-        jPanel1.add(IDtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 110, -1));
-        jPanel1.add(PasswordTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 200, -1));
+        jPanel1.add(IDtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, -1));
+        jPanel1.add(PasswordTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 200, -1));
 
         VerificarBtn.setText("Verificar");
         VerificarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -64,7 +67,7 @@ public class LoginPage extends javax.swing.JFrame {
                 VerificarBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(VerificarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
+        jPanel1.add(VerificarBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 90, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Background.jpg"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 301));
@@ -91,17 +94,17 @@ public class LoginPage extends javax.swing.JFrame {
                 int id = Integer.parseInt(PasswordTxtField.getText());
 
                 if (id == 1155 && nombre.contains("Juan")) {
-                    JOptionPane.showMessageDialog(null, "Su ingreso ha sido correcto");
+                    JOptionPane.showMessageDialog(null, "Su ingreso ha sido correcto.");
                     MainMenu ejecuta = new MainMenu();
                     ejecuta.setVisible(true);
                     this.dispose();
 
+                }else{
+                    JOptionPane.showMessageDialog(null, "Ingreso erroneo, intente de nuevo.");
                 }
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "El espacio nombre solo acepta letras.\n"
-                    + "El espacio Id solo acepta numeros.\n"
-                    + "Por favor intente de nuevo");
+            JOptionPane.showMessageDialog(null, "Por favor no utilice simbolos.");
         }
 
 
