@@ -34,12 +34,18 @@ public class BuscarLibro extends javax.swing.JFrame {
         BusquedaPublicacionBtn = new javax.swing.JToggleButton();
         Cerrar = new javax.swing.JToggleButton();
         BusquedaLibroBtn1 = new javax.swing.JToggleButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Buscar libro");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 37, 717, 33));
 
         BusquedaIDBtn.setText("Numero de Id");
         BusquedaIDBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -47,10 +53,13 @@ public class BuscarLibro extends javax.swing.JFrame {
                 BusquedaIDBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(BusquedaIDBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(526, 93, 151, -1));
 
         InventarioDisplayField.setColumns(20);
         InventarioDisplayField.setRows(5);
         jScrollPane1.setViewportView(InventarioDisplayField);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 132, 235, 322));
 
         BusquedaPublicacionBtn.setText("Año de publicacion");
         BusquedaPublicacionBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -63,6 +72,7 @@ public class BuscarLibro extends javax.swing.JFrame {
                 BusquedaPublicacionBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(BusquedaPublicacionBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 88, -1, -1));
 
         Cerrar.setText("Cerrar");
         Cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -70,6 +80,7 @@ public class BuscarLibro extends javax.swing.JFrame {
                 CerrarMouseClicked(evt);
             }
         });
+        jPanel1.add(Cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(526, 264, 124, 61));
 
         BusquedaLibroBtn1.setText("Nombre de Libro");
         BusquedaLibroBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -77,54 +88,10 @@ public class BuscarLibro extends javax.swing.JFrame {
                 BusquedaLibroBtn1MouseClicked(evt);
             }
         });
+        jPanel1.add(BusquedaLibroBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 88, 151, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BusquedaPublicacionBtn)
-                        .addGap(89, 89, 89)
-                        .addComponent(BusquedaLibroBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BusquedaIDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BusquedaPublicacionBtn)
-                            .addComponent(BusquedaLibroBtn1))
-                        .addGap(5, 5, 5))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BusquedaIDBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jScrollPane1)
-                        .addGap(63, 63, 63))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(Cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(192, Short.MAX_VALUE))))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bla.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -292,6 +259,7 @@ public class BuscarLibro extends javax.swing.JFrame {
     private javax.swing.JToggleButton Cerrar;
     private javax.swing.JTextArea InventarioDisplayField;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

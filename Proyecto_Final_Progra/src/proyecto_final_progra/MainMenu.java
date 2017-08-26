@@ -40,12 +40,19 @@ public class MainMenu extends javax.swing.JFrame {
         BuscarClienteBtn = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         FacturaDisplay = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Menu Principal");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 1098, -1));
 
         InventarioBtn.setText("Buscar Inventario");
         InventarioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -53,6 +60,7 @@ public class MainMenu extends javax.swing.JFrame {
                 InventarioBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(InventarioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 126, 157, -1));
 
         AlquilerBtn.setText("Alquilar");
         AlquilerBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -60,6 +68,7 @@ public class MainMenu extends javax.swing.JFrame {
                 AlquilerBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(AlquilerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 126, 157, -1));
 
         RetornoBtn.setText("Retorno");
         RetornoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -72,6 +81,7 @@ public class MainMenu extends javax.swing.JFrame {
                 RetornoBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(RetornoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 75, 120, -1));
 
         ClientesBtn.setText("Buscar Clientes");
         ClientesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -79,6 +89,7 @@ public class MainMenu extends javax.swing.JFrame {
                 ClientesBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(ClientesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 126, 157, -1));
 
         FacturaBtn.setText("Factura");
         FacturaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -86,6 +97,7 @@ public class MainMenu extends javax.swing.JFrame {
                 FacturaBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(FacturaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(925, 126, 157, -1));
 
         AgregaInvBtn.setText("Agregar a Inventario");
         AgregaInvBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -93,14 +105,19 @@ public class MainMenu extends javax.swing.JFrame {
                 AgregaInvBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(AgregaInvBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 126, -1, -1));
 
         InventarioDisplay.setColumns(20);
         InventarioDisplay.setRows(5);
         jScrollPane1.setViewportView(InventarioDisplay);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 176, 284, 372));
+
         ClienteDisplay.setColumns(20);
         ClienteDisplay.setRows(5);
         jScrollPane3.setViewportView(ClienteDisplay);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 176, 277, 372));
 
         BuscarClienteBtn.setText("Agregar Cliente");
         BuscarClienteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,87 +125,19 @@ public class MainMenu extends javax.swing.JFrame {
                 BuscarClienteBtnMouseClicked(evt);
             }
         });
+        jPanel1.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 126, 157, -1));
 
         FacturaDisplay.setColumns(20);
         FacturaDisplay.setRows(5);
         jScrollPane2.setViewportView(FacturaDisplay);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(InventarioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(AgregaInvBtn))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BuscarClienteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(AlquilerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FacturaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1098, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(RetornoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(159, 159, 159))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RetornoBtn)
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AgregaInvBtn)
-                    .addComponent(InventarioBtn)
-                    .addComponent(ClientesBtn)
-                    .addComponent(BuscarClienteBtn)
-                    .addComponent(AlquilerBtn)
-                    .addComponent(FacturaBtn))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jScrollPane1))
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(786, 176, 270, 372));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bla5.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 590));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -328,6 +277,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextArea InventarioDisplay;
     private javax.swing.JToggleButton RetornoBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
