@@ -7,6 +7,7 @@ package proyecto_final_progra;
 //ser necesario.
 
 public class Libro {
+   
     
     int id, publicacion, precio;
     String nombre, autor, editorial;    

@@ -41,7 +41,7 @@ public class BuscarLibro extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Buscar libro");
 
-        BusquedaIDBtn.setText("Busqueda por Id");
+        BusquedaIDBtn.setText("Numero de Id");
         BusquedaIDBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BusquedaIDBtnMouseClicked(evt);
@@ -52,10 +52,15 @@ public class BuscarLibro extends javax.swing.JFrame {
         InventarioDisplayField.setRows(5);
         jScrollPane1.setViewportView(InventarioDisplayField);
 
-        BusquedaPublicacionBtn.setText("Busqueda por año de publicacion");
+        BusquedaPublicacionBtn.setText("Año de publicacion");
         BusquedaPublicacionBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BusquedaPublicacionBtnMouseClicked(evt);
+            }
+        });
+        BusquedaPublicacionBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BusquedaPublicacionBtnActionPerformed(evt);
             }
         });
 
@@ -66,7 +71,7 @@ public class BuscarLibro extends javax.swing.JFrame {
             }
         });
 
-        BusquedaLibroBtn1.setText("Busqueda por nombre de Libro");
+        BusquedaLibroBtn1.setText("Nombre de Libro");
         BusquedaLibroBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BusquedaLibroBtn1MouseClicked(evt);
@@ -82,42 +87,43 @@ public class BuscarLibro extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BusquedaIDBtn)
-                            .addComponent(BusquedaPublicacionBtn)
-                            .addComponent(BusquedaLibroBtn1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Cerrar)
-                        .addGap(58, 58, 58)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                        .addComponent(BusquedaPublicacionBtn)
+                        .addGap(89, 89, 89)
+                        .addComponent(BusquedaLibroBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BusquedaIDBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1)
-                .addGap(47, 47, 47)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BusquedaIDBtn)
-                        .addGap(37, 37, 37)
-                        .addComponent(BusquedaPublicacionBtn)
-                        .addGap(26, 26, 26)
-                        .addComponent(BusquedaLibroBtn1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BusquedaPublicacionBtn)
+                            .addComponent(BusquedaLibroBtn1))
+                        .addGap(5, 5, 5))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Cerrar))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE))
-                        .addGap(63, 63, 63))))
+                        .addComponent(BusquedaIDBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jScrollPane1)
+                        .addGap(63, 63, 63))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(Cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(192, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,6 +149,10 @@ public class BuscarLibro extends javax.swing.JFrame {
 
     private void BusquedaIDBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BusquedaIDBtnMouseClicked
         // TODO add your handling code here:
+        
+        //este metodo se encarga de buscar dentro de las listas que estan creadas y las q han sido creadas,
+        //y encontrar basado en los parametros que se definen en la interfaz grafica.
+        
        try {
             biblioteca.llenarLibro();
 
@@ -235,6 +245,10 @@ public class BuscarLibro extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BusquedaLibroBtn1MouseClicked
+
+    private void BusquedaPublicacionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BusquedaPublicacionBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BusquedaPublicacionBtnActionPerformed
 
     /**
      * @param args the command line arguments

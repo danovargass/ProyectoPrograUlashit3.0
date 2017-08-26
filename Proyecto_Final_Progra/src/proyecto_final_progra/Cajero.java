@@ -1,6 +1,8 @@
 
 package proyecto_final_progra;
 
+//esta clase existe para poder generar objetos con los parametros designados para el cajero.
+
 import javax.swing.JOptionPane;
 
 public class Cajero {

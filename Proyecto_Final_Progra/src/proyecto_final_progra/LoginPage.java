@@ -43,12 +43,14 @@ public class LoginPage extends javax.swing.JFrame {
 
         HeaderLoginPage.setBackground(new java.awt.Color(255, 255, 255));
         HeaderLoginPage.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
+        HeaderLoginPage.setForeground(new java.awt.Color(255, 255, 255));
         HeaderLoginPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HeaderLoginPage.setText("Ingrese sus datos");
         jPanel1.add(HeaderLoginPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 488, -1));
 
         NombreTxt.setBackground(new java.awt.Color(255, 255, 255));
         NombreTxt.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        NombreTxt.setForeground(new java.awt.Color(255, 255, 255));
         NombreTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         NombreTxt.setText("Nombre:");
         jPanel1.add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 140, -1));
@@ -56,6 +58,7 @@ public class LoginPage extends javax.swing.JFrame {
 
         IDtxt.setBackground(new java.awt.Color(255, 255, 255));
         IDtxt.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        IDtxt.setForeground(new java.awt.Color(255, 255, 255));
         IDtxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         IDtxt.setText("ID:");
         jPanel1.add(IDtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, -1));
@@ -88,6 +91,7 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void VerificarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerificarBtnMouseClicked
         //Esta ventana se creo para intentar hacer el UI/UX mas amigable para el usuario.
+        //su principal tarea es crear una interfaz grafica que permita al usuario entrar de forma segura al programa
         try {
             for (int i = 0; i == 0; i++) {
                 String nombre = NombreTxtField.getText();

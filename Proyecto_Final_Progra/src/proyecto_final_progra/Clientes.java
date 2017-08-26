@@ -3,6 +3,7 @@ package proyecto_final_progra;
 import javax.swing.JOptionPane;
 
 public class Clientes {
+    //esta clase cumple la funcion de guardar datos predeterminados de tipo usuario.
 
     static Usuario cliente[] = new Usuario[15];
     static int cont = 5;

@@ -7,6 +7,8 @@ package proyecto_final_progra;
 public class Usuario {
 	 int cedula, numeroTelefono;
 	 String nombre, apellido;
+         
+         //esta clase se creo para utilizarla como un obejto que guarda parametros predefinidos para cada usuario.
 	
 	public Usuario(int cedula, int numeroTelefono, String nombre, String apellido) {
         this.cedula = cedula;

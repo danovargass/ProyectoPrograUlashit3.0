@@ -35,11 +35,11 @@ public class MainMenu extends javax.swing.JFrame {
         AgregaInvBtn = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         InventarioDisplay = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        FacturaDisplay = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         ClienteDisplay = new javax.swing.JTextArea();
         BuscarClienteBtn = new javax.swing.JToggleButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        FacturaDisplay = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,7 +73,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        ClientesBtn.setText("Clientes");
+        ClientesBtn.setText("Buscar Clientes");
         ClientesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ClientesBtnMouseClicked(evt);
@@ -98,10 +98,6 @@ public class MainMenu extends javax.swing.JFrame {
         InventarioDisplay.setRows(5);
         jScrollPane1.setViewportView(InventarioDisplay);
 
-        FacturaDisplay.setColumns(20);
-        FacturaDisplay.setRows(5);
-        jScrollPane2.setViewportView(FacturaDisplay);
-
         ClienteDisplay.setColumns(20);
         ClienteDisplay.setRows(5);
         jScrollPane3.setViewportView(ClienteDisplay);
@@ -113,71 +109,81 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        FacturaDisplay.setColumns(20);
+        FacturaDisplay.setRows(5);
+        jScrollPane2.setViewportView(FacturaDisplay);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(AgregaInvBtn)
-                                .addGap(18, 18, 18)
-                                .addComponent(BuscarClienteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(RetornoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(InventarioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(AlquilerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(125, 125, 125))
+                        .addGap(19, 19, 19)
+                        .addComponent(InventarioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(AgregaInvBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BuscarClienteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGap(46, 46, 46)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FacturaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(AlquilerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(FacturaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1098, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(RetornoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(159, 159, 159))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InventarioBtn)
-                    .addComponent(AlquilerBtn)
-                    .addComponent(ClientesBtn)
-                    .addComponent(FacturaBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RetornoBtn)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AgregaInvBtn)
+                    .addComponent(InventarioBtn)
+                    .addComponent(ClientesBtn)
+                    .addComponent(BuscarClienteBtn)
+                    .addComponent(AlquilerBtn)
+                    .addComponent(FacturaBtn))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AgregaInvBtn)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(RetornoBtn)
-                                .addComponent(BuscarClienteBtn)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3)))
-                    .addComponent(jScrollPane2))
-                .addContainerGap(28, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane1))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,6 +193,10 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     BuscarCliente Esencial = new BuscarCliente();
+    
+    //los botones que no esten comentados individualmente basicamente se encargan de llamar otras ventanas
+    //donde se ejecutan las tareas de cada ventana.
+    
     private void BuscarClienteBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarClienteBtnMouseClicked
         // TODO add your handling code here:
 
@@ -204,10 +214,8 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_AgregaInvBtnActionPerformed
 
     private void FacturaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturaBtnMouseClicked
-        // TODO add your handling code here:
 
-        //FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + costoFinal + " colones\n"
-        //        + baseClientes.cliente[e]);
+        //Este metodo hace la suma y la impresion de los datos pertinentes para la factura de cada alquiler
         try {
             if (alquiler != 0) {
                 FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + (biblioteca.libros[i].precio * alquiler) + " colones\n"
@@ -236,12 +244,12 @@ public class MainMenu extends javax.swing.JFrame {
             if (Esencial.confirmacion == true) {
                 alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
             } else if (Esencial.confirmacion == false) {
-                JOptionPane.showMessageDialog(null, "Primer esocoja el libro y el cliente");
+                JOptionPane.showMessageDialog(null, "Primero esocoja el libro y el cliente");
             }
         } catch (java.lang.NumberFormatException e) {
         }
-
-        // TODO add your handling code here:
+            //este metodo se encarga de regristrar cuantos dias se van a cobrar a la hora de imprimir la factura
+            //de cada alquiler.
     }//GEN-LAST:event_AlquilerBtnMouseClicked
 
     private void InventarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InventarioBtnMouseClicked
@@ -258,7 +266,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_RetornoBtnActionPerformed
 
     private void RetornoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetornoBtnMouseClicked
-        // TODO add your handling code here:
+        //este metodo se hace cargo de registrar la devolucion de un libro
 
         int diasAlquilados = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuantos dias han transcurrido desde la fecha de prestamo"));
         if (diasAlquilados > alquiler) {

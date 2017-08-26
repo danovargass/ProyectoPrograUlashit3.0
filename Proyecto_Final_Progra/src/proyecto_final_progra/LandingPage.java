@@ -37,19 +37,20 @@ public class LandingPage extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HeaderLandingPage.setBackground(new java.awt.Color(255, 255, 255));
-        HeaderLandingPage.setFont(new java.awt.Font("Silom", 2, 18)); // NOI18N
+        HeaderLandingPage.setFont(new java.awt.Font("Silom", 2, 36)); // NOI18N
         HeaderLandingPage.setForeground(new java.awt.Color(255, 255, 255));
         HeaderLandingPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HeaderLandingPage.setText("Sistema de Alquiler de Libros");
-        jPanel1.add(HeaderLandingPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 850, -1));
+        jPanel1.add(HeaderLandingPage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 850, -1));
 
+        LogInBtn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         LogInBtn.setText("Log in");
         LogInBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogInBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 136, -1));
+        jPanel1.add(LogInBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 120, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background-pattern.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 560));
@@ -62,7 +63,7 @@ public class LandingPage extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -70,6 +71,8 @@ public class LandingPage extends javax.swing.JFrame {
 
     private void LogInBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInBtnMouseClicked
         // TODO add your handling code here:
+        
+        //esta ventana es simplemente para hacer al usuario saber que va a empezar el programa
         
         LoginPage ejecuta = new LoginPage();
         ejecuta.setVisible(true);

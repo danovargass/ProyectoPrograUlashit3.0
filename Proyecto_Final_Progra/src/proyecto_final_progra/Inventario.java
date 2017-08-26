@@ -3,6 +3,8 @@ package proyecto_final_progra;
 import javax.swing.JOptionPane;
 
 public class Inventario {
+    
+    //esta clase utiliza los datos predefinidos de la clase libro para crear una lista de datos predefinidos
 
     static Libro libros[] = new Libro[15];
     static int cont = 5;
