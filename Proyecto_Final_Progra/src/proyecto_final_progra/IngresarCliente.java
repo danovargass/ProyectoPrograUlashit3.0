@@ -56,11 +56,13 @@ public class IngresarCliente extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 88, -1, -1));
         jPanel1.add(NombreTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 84, 260, -1));
 
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Apellido");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 137, -1, -1));
         jPanel1.add(ApellidoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 133, 260, -1));
 
+        jLabel4.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Cedula");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 183, -1, -1));
@@ -74,6 +76,7 @@ public class IngresarCliente extends javax.swing.JFrame {
         });
         jPanel1.add(AgregarClientBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 301, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Numero");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 225, -1, -1));

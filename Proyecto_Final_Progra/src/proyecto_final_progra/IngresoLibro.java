@@ -80,7 +80,7 @@ public class IngresoLibro extends javax.swing.JFrame {
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Año de publicacion");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 333, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Precio");
@@ -89,12 +89,12 @@ public class IngresoLibro extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Id");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 113, -1, -1));
-        jPanel1.add(LibroTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 109, 272, -1));
-        jPanel1.add(AutorTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 151, 272, -1));
-        jPanel1.add(AnnoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 241, 272, -1));
-        jPanel1.add(EditorialTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 197, 272, -1));
-        jPanel1.add(PrecioTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 283, 272, -1));
-        jPanel1.add(IdTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 325, 272, -1));
+        jPanel1.add(LibroTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 272, -1));
+        jPanel1.add(AutorTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 272, -1));
+        jPanel1.add(AnnoTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 272, -1));
+        jPanel1.add(EditorialTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 272, -1));
+        jPanel1.add(PrecioTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 272, -1));
+        jPanel1.add(IdTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 272, -1));
 
         AgregarBtn.setText("Agregar");
         AgregarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,7 +151,7 @@ public class IngresoLibro extends javax.swing.JFrame {
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Out of bounds");
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "no se pueden ingresar numeros en el año");
+            JOptionPane.showMessageDialog(null, "no puede ingresar numeros en los campos (Nombre, Autor y Editorial)");
         }
 
     }//GEN-LAST:event_AgregarBtnMouseClicked

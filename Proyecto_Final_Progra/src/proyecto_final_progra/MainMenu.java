@@ -33,10 +33,6 @@ public class MainMenu extends javax.swing.JFrame {
         ClientesBtn = new javax.swing.JToggleButton();
         FacturaBtn = new javax.swing.JToggleButton();
         AgregaInvBtn = new javax.swing.JToggleButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        InventarioDisplay = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        ClienteDisplay = new javax.swing.JTextArea();
         BuscarClienteBtn = new javax.swing.JToggleButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         FacturaDisplay = new javax.swing.JTextArea();
@@ -68,7 +64,7 @@ public class MainMenu extends javax.swing.JFrame {
                 AlquilerBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(AlquilerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 126, 157, -1));
+        jPanel1.add(AlquilerBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 157, -1));
 
         RetornoBtn.setText("Retorno");
         RetornoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -81,7 +77,7 @@ public class MainMenu extends javax.swing.JFrame {
                 RetornoBtnActionPerformed(evt);
             }
         });
-        jPanel1.add(RetornoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(851, 75, 120, -1));
+        jPanel1.add(RetornoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 230, 120, -1));
 
         ClientesBtn.setText("Buscar Clientes");
         ClientesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,7 +85,7 @@ public class MainMenu extends javax.swing.JFrame {
                 ClientesBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(ClientesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 126, 157, -1));
+        jPanel1.add(ClientesBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 157, -1));
 
         FacturaBtn.setText("Factura");
         FacturaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,31 +103,19 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jPanel1.add(AgregaInvBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 126, -1, -1));
 
-        InventarioDisplay.setColumns(20);
-        InventarioDisplay.setRows(5);
-        jScrollPane1.setViewportView(InventarioDisplay);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 176, 284, 372));
-
-        ClienteDisplay.setColumns(20);
-        ClienteDisplay.setRows(5);
-        jScrollPane3.setViewportView(ClienteDisplay);
-
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 176, 277, 372));
-
         BuscarClienteBtn.setText("Agregar Cliente");
         BuscarClienteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BuscarClienteBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 126, 157, -1));
+        jPanel1.add(BuscarClienteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 157, -1));
 
         FacturaDisplay.setColumns(20);
         FacturaDisplay.setRows(5);
         jScrollPane2.setViewportView(FacturaDisplay);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(786, 176, 270, 372));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 270, 372));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bla5.jpg"))); // NOI18N
@@ -166,9 +150,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         //Este metodo hace la suma y la impresion de los datos pertinentes para la factura de cada alquiler
         try {
-            if (alquiler != 0) {
+            if (alquiler != 0 && Esencial.confirmacion == true) {
                 FacturaDisplay.setText("" + biblioteca.libros[i] + "Su monto a pagar seria: " + (biblioteca.libros[i].precio * alquiler) + " colones\n"
                         + baseClientes.cliente[e]);
+            } else if (Esencial.confirmacion == false) {
+                JOptionPane.showMessageDialog(null, "Primero escoja el libro y el cliente y los dias a alquilar el libro");
             }
 
         } catch (java.lang.NullPointerException e) {
@@ -193,7 +179,7 @@ public class MainMenu extends javax.swing.JFrame {
             if (Esencial.confirmacion == true) {
                 alquiler = Integer.parseInt(JOptionPane.showInputDialog("Cuantos dias se va a llevar el libro?"));
             } else if (Esencial.confirmacion == false) {
-                JOptionPane.showMessageDialog(null, "Primero esocoja el libro y el cliente");
+                JOptionPane.showMessageDialog(null, "Primero escoja el libro y el cliente");
             }
         } catch (java.lang.NumberFormatException e) {
         }
@@ -219,7 +205,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         int diasAlquilados = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuantos dias han transcurrido desde la fecha de prestamo"));
         if (diasAlquilados > alquiler) {
-            JOptionPane.showMessageDialog(null, "Tiene una mora de: " + diasAlquilados * 1000);
+            JOptionPane.showMessageDialog(null, "Tiene una mora de: " + (diasAlquilados - alquiler) * 1000);
         } else {
             JOptionPane.showMessageDialog(null, "Gracias por devolver el libro a tiempo.");
         }
@@ -269,19 +255,15 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JToggleButton AgregaInvBtn;
     private javax.swing.JToggleButton AlquilerBtn;
     private javax.swing.JToggleButton BuscarClienteBtn;
-    private javax.swing.JTextArea ClienteDisplay;
     private javax.swing.JToggleButton ClientesBtn;
     private javax.swing.JToggleButton FacturaBtn;
     private javax.swing.JTextArea FacturaDisplay;
     private javax.swing.JToggleButton InventarioBtn;
-    private javax.swing.JTextArea InventarioDisplay;
     private javax.swing.JToggleButton RetornoBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }

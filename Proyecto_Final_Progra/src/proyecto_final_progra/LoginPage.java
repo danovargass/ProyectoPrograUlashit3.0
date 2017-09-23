@@ -108,7 +108,7 @@ public class LoginPage extends javax.swing.JFrame {
                 }
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Por favor no utilice simbolos.");
+            JOptionPane.showMessageDialog(null, "Por favor no utilice simbolos ni letras en la contraseña");
         }
 
 
